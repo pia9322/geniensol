@@ -1,0 +1,1504 @@
+@import url("./common.css");
+
+
+// ====================================default mixin====================================
+@mixin fixed-layout {max-width: 1480px; margin: 0 auto; width: 100%;}
+@mixin layoutBoxColor {border: 2px solid #f00;}
+@mixin header-height {height: 62px;}
+@mixin font-p {font-family: 'Pretendard';}
+@mixin font-l {font-family: 'Lato';}
+@mixin fc-b6 {color: #b6b6b6;}
+
+
+
+// 1920
+@mixin margin-top-1920() {margin-top: 100px;}
+@mixin margin-bottom-1920() {margin-bottom: 100px;}
+
+// 1100
+@mixin margin-top-1100() {margin-top: 75px;}
+@mixin margin-bottom-1100() {margin-bottom: 75px;}
+
+
+@mixin absolute-center {
+    position: absolute;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin absolute-x($left, $top) {
+    position: absolute;
+    left: $left; top: $top;
+    transform: translateX(-$left);
+}
+
+@mixin absolute-y($left, $top) {
+    position: absolute;
+    left: $left; top: $top;
+    transform: translateY(-$top);
+}
+
+@mixin visual-text($fs) {
+    width: 100%; height: 100%;
+    font-size: $fs;
+    color: #fff;
+    display: flex; align-items: center; justify-content: center;
+    line-height: 1.25;
+    letter-spacing: -0.64px;
+    text-transform: uppercase;
+}
+
+@mixin sub-menu-bar($height, $margin) {
+    content: '';
+    display: inline-block;
+    width: 1px; height: $height;
+    background: #7bcef1;
+    margin-left: $margin;
+}
+
+@mixin sub-page-title($fs) {
+    font-size: $fs;
+    letter-spacing: -0.4px;
+    color: #1e3c5a;
+    font-family: "asn-sb";
+    margin-top: 100px;
+    text-align: center;
+}
+
+@mixin after_bar_01 {
+    content: '';
+    position: absolute; left: 0; bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: #00B050;
+    opacity: 0;
+    transition: .3s;
+}
+
+@mixin board_text {
+    white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
+}
+@mixin border_01 {
+    background: #fff7e0; border: 1px solid #23406d; border-radius: 10px;
+}
+// ====================================default mixin====================================
+//	font-family: 'asn-l', 'asn-bold', 'asn-t';
+
+
+
+
+// ====================================== global css ======================================
+body {
+    
+    // point_color
+    .point_color_01 { color: #23406d; }
+
+    // btn_01
+    .point_btn_01 {background: #00b050; padding: 20px 30px; border-radius: 30px;}
+
+    // point_bg
+    .point_bg_01 { background: #23406d; }
+    .point_bg_01 { background: #00B050; }
+
+    // ico
+    .ico_link { display: flex; align-items: center;}
+    .ico_arrow_01 {
+        background: url('../images/ico/arrow_rotate_01.svg') no-repeat center/cover;
+        display: block;
+        width: 8px; height: 8px;
+    }
+
+    .ico_arrow_02 {
+        background: url('../images/ico/arrow_rotate_02.svg') no-repeat center/cover;
+        display: inline-block;
+        width: 8px; height: 8px;
+        animation: scrollDown 1s ease infinite;
+        @keyframes scrollDown {
+            0% {transform: translate(0);}
+            50% {transform: translate(5px,5px);}
+            100% {transform: translate(0);}
+        }
+    }
+    // ico
+
+
+    
+    .text_link {
+        display: flex; align-items: center;
+        font-family: 'pre-bold'; font-size: 13px; color: #fff; line-height: 1.85; letter-spacing: -0.33px;
+        .ico_arrow_01 {
+            position: relative; 
+            margin-left: 20px;
+            &::before {
+                content: '';
+                opacity: 0; 
+                @include absolute-center();
+                background: url('../images/ico/arrow_rotate_01.svg') no-repeat center;
+                background-color: #23406d;
+                width: 32px; height: 32px;
+                border-radius: 100%;
+                transition: .15s;
+            }
+        }
+        &:hover {
+            .ico_arrow_01 {
+                &::before {
+                    opacity: 1;
+                }
+            }
+        }
+    }
+
+
+    .view_more {
+        display: inline-block;
+        position: relative;
+        color: #3bb0e2;
+        &::after {
+            content: '';
+            position: absolute;
+            left: 50%; bottom: 100%;
+            width:1px; height: 0;
+            background: #3bb0e2;
+            transition: all .3s;
+        }
+        &:hover {
+            &::after {
+                height: 40px;
+            }
+        }
+    }
+    
+    .table_wrap {
+    
+        .table_header {
+            margin: 0 auto 2rem;
+            // border: 1px solid #F00;
+            display: flex;
+            justify-content: space-between;
+    
+           
+            .table_text_search {
+                display: flex;
+                align-items: center;
+    
+                .search_form {
+                    fieldset {
+                        legend {
+                            display: none;
+                        }
+                        display: flex;
+                        align-items: center;
+                        .form_02_selectbox {
+                            flex-wrap: wrap;
+                            select {
+                                border: 1px solid #ddd;
+                                width: 90px; height: 40px;
+                                margin-right: 6px;
+                                padding-left: 14px;
+                            }
+                     
+                            input[type=text] {
+                                height: 40px;
+                                width: 220px;
+                                border: 1px solid #ddd;
+                                margin-right: 6px;
+                                padding: 0 10px;
+                            }
+                            input[type=submit] {
+                                background: #3bb0e2;
+                                color: #fff;
+                                border: none;
+                                padding: 1rem 2rem;
+                                cursor: pointer;
+                            }
+                        }
+                    }
+                }
+            }
+    
+        }
+    
+        .table_notice {
+            width: 100%;
+            line-height: 1.78;
+            letter-spacing: -0.45px;
+            table-layout: fixed;
+            thead {
+                letter-spacing: -0.6px;
+                background: #f1f1f1;
+                border-top: 2px solid #1e3c5a;
+                color: #222;
+                font-size: 1.8rem;
+    
+                tr {
+                    th {
+                        padding: 20px 10px;
+                        text-align: center;
+    
+                        &.table_num, &.table_data {
+                            width: 17%;
+                        }
+                        &.table_title {
+                            width: auto;
+                        }
+                    }
+    
+                }
+            }
+    
+            tbody {
+                display: none;
+                font-size: 1.6rem;
+                tr {
+                    border-bottom: 1px solid #e5e5e5;
+    
+                    td {
+                        padding: 20px 0;
+                        text-align: center;
+                        overflow: hidden;
+                        text-overflow: ellipsis;
+                        white-space: nowrap;
+                        color: #555;
+                        &.table_title {
+                            text-align: left;
+                            a {
+                                color: #555;
+                            }
+                            &:hover {
+                                a {
+                                    color: #3bb0e2;
+                                }
+                            }
+                        }
+                  
+                    }
+                    .notice_download {
+                        a {
+                            display: block;
+                        }
+                    }
+                }
+    
+                &.active {
+                    display: table-footer-group;
+                }
+            }
+        }
+        
+        // table_news
+        .table_news {
+            margin-top: 50px;
+            .news_wrap {
+                display: flex; justify-content: space-between; flex-wrap: wrap;
+                flex-wrap: wrap;
+                > a {
+                    width: calc(33% - 20px);
+                    margin-bottom: 40px;
+                    .news_item {
+                        img {
+                            object-fit: cover;
+                            width: 100%; height: 100%;
+                        }
+                        figcaption {
+                            padding: 19px 17px;
+                            > span {
+                                display: block;
+                            }
+                            .text_01 {
+                                font-size: 2rem;
+                                font-family: "asn-sb";
+                                letter-spacing: -0.2px;
+                                color: #222;
+                                transition: all .15s;
+                            }
+                            .text_02 {
+                                font-size: 1.4rem;
+                                margin-top: 20px;
+                                color: #999;
+                            }
+                        }
+                    }
+                    // hover, active
+                    &:hover {
+                        .text_01 {
+                            color: #3bb0e2 !important;
+                        }
+                    }
+                }
+            }
+        }
+        
+        .table_notice_more_btn {
+            margin-top: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+    
+            .num_box {
+                a {
+                    font-size: 1.6rem;
+                    color: #a6a6a6;
+                    padding: 0 10px;
+                    font-weight: bold;
+    
+                    &.active {
+                        color: #112D4E;
+                    }
+                }
+            }
+    
+            .btn_box {
+                display: flex;
+                a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+                    padding: 5px;
+                    margin: 0 5px;
+                }
+    
+            }
+        }
+    
+    }
+    
+    .table_wrap_more {
+        margin-top: 50px;
+    
+        .table_notice {
+            width: 100%;
+            line-height: 1.78;
+            letter-spacing: -0.45px;
+            table-layout: fixed;
+    
+            thead {
+                letter-spacing: -0.6px;
+                border-top: 1px solid #1e3c5a;
+                border-bottom: 1px solid #e6e6e6;
+                color: #222;
+                font-size: 1.8rem;
+    
+                tr {
+                    th {
+                        padding: 20px
+                    }
+                    td {
+                        a {
+                            display: block;
+                        }
+                    }
+    
+                    .table_notice_title {
+                        font-size: 2rem;
+                        width: auto;
+                        text-align: left;
+                        vertical-align: middle;
+                    }
+    
+                    .table_notice_data {
+                        font-size: 1.4rem;
+                        width: 20%;
+                        text-align: right;
+                        color: #999;
+                    }
+    
+                    &:first-child {
+                        font-size: 2rem;
+                    }
+                }
+            }
+    
+            tbody {
+                tr {
+                    border-bottom: 1px solid #e5e5e5;
+    
+                    .table_notice_detail {
+                        padding: 20px;
+                        font-size: 1.6rem;
+                    }
+                }
+            }
+    
+    
+    
+    
+    
+        }
+    
+        .table_notice_more {
+            margin-top: 40px;
+            display: flex;
+            justify-content: flex-end;
+    
+            >a {
+                font-size: 1.6rem;
+                display: inline-block;
+                padding: 10px 26px;
+                color: #fff;
+                transition: all .3s;
+                background: #3bb0e2;
+                &:hover {
+                    color: #fff;
+                    background: rgba($color: #3bb0e2, $alpha: .5);
+                }
+            }
+        }
+    }
+
+
+    
+}
+
+// ====================================== global css ======================================
+
+
+
+body {
+
+    // mouse effect
+    #cursor{
+        display: none;
+        position: fixed; z-index: 100;
+        top: 0; left: 0;
+        transform: translate(-50%, -50%);
+        border: 1px solid #fff; border-radius: 100%; 
+        font-size: 18px;
+        pointer-events: none; align-items: center; justify-content: center;
+    }
+    // mouse effect
+
+    
+    
+    // ====================================== header ======================================
+    header {
+        position: absolute; z-index: 9998; width: 100%;
+        transition: .3s;
+        margin-top: 50px;
+
+
+        // hover, active
+        a {
+            transition: .15s;
+            color: #fff;
+            &:hover {
+                color: #23406d !important;
+            }
+        }
+
+
+        // ========================================== top_header ==========================================  
+        .header_wrap {
+            @include fixed-layout;
+            @include header-height;            
+            
+            display: flex; justify-content: space-between; align-items: center;
+            // logo
+            .header_left {}
+
+            // center_menu
+            .header_center {
+                display: flex;
+                height: 100%;
+
+                >.depth_01 {
+                    height: 100%; margin-left: 40px;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    > a {
+                        height: 100%;
+                        display: flex; align-items: center;
+                        font-size: 16px; letter-spacing: -0.4px;
+                    }
+                }
+
+            }
+
+
+            .header_full {
+                display: none;
+            }
+            // hover, active
+            &:hover {
+                .header_center {
+                    .depth_01 {opacity: 1; visibility: visible;}
+                }
+            }
+        }
+        // ========================================== top_header ==========================================  
+
+
+
+        // ========================================== right_full_menu ==========================================  
+        #full_menu {
+            position: relative;
+            .full_menu_wrap {
+                position: relative;
+                
+
+                #full_menu_bar {
+                    position:fixed; right: 0; top: 50%;
+                    display: block; z-index: 9999;
+                    width: 120px;
+                    font-size: 16px; color: #fff; 
+                    line-height: 2; 
+                    border-bottom: 1px solid #fff;
+                }
+
+                #full_menu_view {
+                    // display: none;
+                    position: fixed; right: -150%; top: 0; z-index: 9998;
+                    width: 100vw; height: 100vh;
+                    background-color: #010d21;
+                    transition: .5s;
+
+
+                    .view_wrap {
+                        width: 100%; height: 100%;
+                        background: url('../images/pattern/full_menu_padttern_01.svg') no-repeat center/cover;
+                        display: flex;
+                        .content {
+                            width: 50%;
+                            padding-top: 213px;
+                            &.content_01 {
+                                padding-left: 200px;
+                                border-right: 1px solid rgba(255, 255, 255, 0.1);
+
+                                .content_wrap {
+                                    > li {
+                                        margin-top: 30px;
+                                        &:first-child {
+                                            margin-top: 0;
+                                        }
+                                        > a{
+                                            i {
+                                                font-size: 16px; font-weight: 300; line-height: normal; letter-spacing: 0.8px; vertical-align: top;
+                                            }
+                                            span {
+                                                font-size: 6rem; font-weight: 300; line-height: 1.2; letter-spacing: normal;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                            &.content_02 {
+                                padding-left: 124px;
+                                .content_wrap {
+
+                                    .contact_title {
+                                        font-size: 6rem; font-weight: 300; line-height: 1.33; letter-spacing: normal;
+                                    }
+
+                                    .contact_info {
+                                        > li {
+                                            font-size: 14px;
+                                            margin-top: 32px;
+                                            * {
+                                                display: block;
+                                            }
+                                            strong {
+                                                line-height: normal; letter-spacing: -0.35px;
+                                            }  
+                                            a {
+                                                @include fc-b6()
+                                                margin-top: 8px;
+                                                line-height: normal; letter-spacing: -0.35px;
+                                            }
+                                        }
+                                    }
+
+                                    .contact_detail {
+                                        display: flex;
+                                        margin-top: 80px;
+                                        font-size: 14px;
+                                        > li {
+                                            margin-left: 60px;
+                                            &:first-child {
+                                                margin-left: 0;
+                                            }
+                                            
+                                            > * {
+                                                display: block
+                                            }
+                                            strong {
+                                                margin-bottom: 6px;
+                                                line-height: normal; letter-spacing: -0.4px;
+                                            }
+                                            span {
+                                                @include fc-b6();
+                                                line-height: 1.5;
+                                                letter-spacing: -0.4px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                    
+
+                    &.active {
+                        right: 0;
+                    }
+                }
+            }
+        }
+        // ========================================== right_full_menu ==========================================  
+
+
+
+    }
+    // ====================================== header ======================================
+
+
+    // ====================================== main ======================================
+    main {
+        position: relative;
+        &.main_wrap {
+            overflow: hidden;
+            .text_01.main_text_title {
+                font-size: 6rem; font-weight: 300; letter-spacing: -1.5px; line-height: 1;
+            }
+            .main_section {
+                
+                &:not(:first-child) {
+                    
+                }
+    
+                &.main_visual_section {
+                    height: 100vh;
+    
+                    .mv_wrap {
+                        
+                        .mv {
+                            position: relative;
+                            background-position: center/cover; background-repeat: no-repeat;
+                            // mv visual
+                            > video {
+                                width: 100%; height: 100%; object-fit: cover;
+                                source {
+                                width: 100%; height: 100%;
+                                }
+                            }
+                            &.mv_01 { }
+                            &.mv_02 {}
+                            &.mv_03 {}
+    
+    
+                            // mv text
+                            .mv_text {
+                                @include absolute-y(0, 50%);
+                                
+                                width: 100%;
+                                .text_wrap {
+                                    
+                                    @include fixed-layout();
+                                    color: #fff;
+                                    .text_01 {
+                                        font-size: 7.5rem; font-weight: 300;  line-height: 1.07;
+                                    }
+                                    .text_link {
+                                        margin-top: 35px;
+                                    }
+                                    
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+    
+                &.main_section_01 {
+                    max-width: 1920px; margin: 0 auto;
+                    background: url('../images/pattern/pattern_01.svg') no-repeat;
+                    .content_wrap {
+                        @include fixed-layout();
+                        &.wrap_01 {
+                            display: flex;
+                            padding-top: 160px;
+                            .text_wrap {
+                             
+                                .text_link {
+                                    margin-top: 35px;
+                                    justify-content: flex-end; line-height: 1.85; letter-spacing: -0.33px;
+                                }
+                            }
+    
+                            .detail_wrap {
+                                margin-left: 200px;
+    
+                                .detail_text {
+                                    .text_01 {
+                                        @include fc-b6();
+                                        padding-bottom: 15px;
+                                        border-bottom: 1px solid #444;
+                                        font-size: 18px;
+                                    }
+                                }
+    
+                                .detail_img {
+                                    margin-top: 67px;
+                                    display: flex;
+                                    >figure {
+                                        text-align: center;
+                                        .img_wrap {
+                                            height: 110px;
+                                            display: flex; align-items: center; justify-content: center;
+                                            img {}
+                                        }
+                                        figcaption {
+                                            margin-top: 30px;
+                                            text-align: center;
+                                            > span {
+                                                display: block;
+                                                &.text_01 {
+                                                    @include font-l();
+                                                    font-size: 3rem; letter-spacing: -0.75px;
+                                                }
+                                                &.text_02 {
+                                                    @include font-p();
+                                                    @include fc-b6();
+                                                    font-size: 16px; line-height: 1.5; letter-spacing: -0.4px; font-weight: 300;
+                                                }
+                                            }
+                                        }
+                                    }
+                                    .ico_plus {
+                                        padding: 0 100px;
+                                    }
+                                }
+                            }
+                        }
+    
+                        &.wrap_02 {
+                            padding-top: 160px;
+                            .img_wrap {
+                                &.wrap_01 {
+                                    > div {
+                                        >figure {
+                                            position: relative;
+                                            >img {}
+                                            >figcaption {
+                                                position: absolute; left: 40px; bottom: 0;
+                                                .text_wrap {
+                                                    > span {
+                                                        display: block;
+                                                        &.text_01{
+                                                            @include font-l();
+                                                            font-size: 6rem; font-weight: 300; letter-spacing: -1.5px;
+                                                        }
+                                                        &.text_02{
+                                                            @include font-p();
+                                                            @include fc-b6();
+                                                            font-size: 18px; font-weight: 300; line-height: 1.5; letter-spacing: -0.45px;
+                                                        }
+                                                    }
+                                                    
+                                                }
+                                            }
+    
+                                            &.img_01 {}
+                                            &.img_02 {
+                                                margin: 200px 0 0 375px;
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                        }
+    
+    
+                    }
+                }
+    
+                &.main_section_02 {
+                    .content_wrap {
+                        &.wrap_01 {
+                            .text_wrap {
+                                
+                                @include fixed-layout();
+                                .text_01 {}
+                                .text_link {
+                                    width: 190px;
+                                    margin-top: 35px;
+                                    justify-content: flex-end;
+                                }
+                            }
+                        }
+    
+                        &.wrap_02 {
+                            margin: 80px 0 0 220px;
+                            .swiper-container {
+                                .swiper-wrapper {
+                                    .swiper-slide {
+                                        > figure {
+                                            img {}
+                                            .text_wrap {
+                                                display: flex;
+                                                margin-top: 45px;
+                                                .wrap_01 {
+                                                    .text_01 {
+                                                        position: relative;
+                                                        font-size: 16px; font-weight: 300;   letter-spacing: 0.8px; line-height: normal;
+                                                        // .slide_bar {
+                                                        //     @include absolute-y(0, 50%)
+                                                        //     display: block;
+                                                        //     width: 395px; height: 1px; 
+                                                        //     background: #444;
+                                                        // }
+                                                    }
+                                                }
+                                                .wrap_02 {
+                                                    width: 395px;
+                                                    margin-left: 75px;
+                                                    > span {
+                                                        display: block;
+                                                        &.slide_bar {
+                                                            display: block;
+                                                            margin-top: 9px;
+                                                            height: 1px;
+                                                            background: #444;
+                                                        }
+                                                        &.text_01 {
+                                                            margin-top: 32px;
+                                                            font-size: 3rem; font-weight: 400; letter-spacing: -0.75px; line-height: normal;
+                                                        }
+                                                        &.text_02 {
+                                                            @include font-p();
+                                                            @include fc-b6();
+                                                            margin-top: 12px;
+                                                            font-size: 16px; font-weight: 300; line-height: 1.5; letter-spacing: -0.4px;
+                                                        }
+                                                    }
+                                                    
+                                                }
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }   
+                }
+    
+                &.main_section_03 {
+                    margin-top: 160px;
+                    .content_wrap {
+                        @include fixed-layout();
+                        display: flex;
+                        .text_wrap {
+                            &.wrap_01 {
+                                font-size: 6rem;  font-weight: 300; letter-spacing: -1.5px; line-height: normal;
+                            }
+                        }
+                        .logo_wrap {
+                            margin-left: 164px;
+                            &.wrap_01 {
+                                display: flex;
+                                align-items: center; 
+                                a {
+                                    margin-left: 40px;
+                                    &:first-child {
+                                        margin-left: 0;
+                                    }
+                                    img {}
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+    
+            }
+        }
+
+        &.sub_page {
+            
+            &.about {
+                padding-top: 325px;
+                .sub_section {
+                    &.section_01 {
+                        margin-left: 825px;
+
+                        .content_wrap {
+                            position: relative;
+                            .img_wrap {
+                                position: relative;
+                                &.wrap_01 {
+                                    img {}
+                                    .text_wrap {
+                                        position: absolute;
+                                        left: -230px; top: 105px;
+                                        
+                                        >span {
+                                            display: block;
+                                            &.text_01 {
+                                                font-size: 7.5rem; font-weight: 300; line-height: 1.07; letter-spacing: normal;
+                                            }
+                                            &.text_02 {
+                                                @include font-p();
+                                                margin-top: 35px;
+                                                font-size: 13px;
+                                                .ico_arrow_02 {
+                                                    margin-left: 32px;
+                                                    display: inline-block;
+                                                }
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.section_02 {
+                        margin-left: 595px;
+                        margin-top: 160px;
+                        .content_wrap {
+
+                            .detail_title {
+                                &.wrap_01 {
+                                    .text_01 {
+                                        @include font-p();
+                                        font-size: 4rem; font-weight: 300; line-height: 1.25; letter-spacing: -2px;
+                                    }
+                                    .text_02 {
+                                        @include font-p();
+                                        margin-top: 42px;
+                                        font-size: 18px; font-weight: 300; line-height: 1.5; letter-spacing: -0.45px;
+                                    }
+                                }
+                            }
+                            .detail_info {
+                                margin-top: 140px;
+                                display: flex;
+                                >figure {
+                                    display: flex; align-items: center;
+                                    margin-left: 100px;
+                                    &:first-child {
+                                        margin-left: 0;
+                                    }
+                                    .img_wrap {
+                                        display: flex; align-items: center; justify-content: center;
+                                        img {}
+                                    }
+                                    figcaption {
+                                        margin-left: 30px;
+                                        text-align: center;
+                                        > span {
+                                            display: block;
+                                            text-align: left;
+                                            &.text_01 {
+                                                @include font-l();
+                                                font-size: 3rem; letter-spacing: -0.75px;
+                                            }
+                                            &.text_02 {
+                                                @include font-p();
+                                                @include fc-b6();
+                                                font-size: 16px; line-height: 1.5; letter-spacing: -0.4px; font-weight: 300;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.section_03 {
+                        max-width: 1480px;
+                        margin: 200px auto 0;
+                        .content_wrap {
+                            .img_wrap {
+                                figure {
+                                    position: relative;
+                                    img {}
+                                    figcaption {
+                                        .text_01 {
+                                            position: relative;
+                                            font-size: 6rem;font-weight: 300;line-height: 1.2;letter-spacing: -1.5px;
+                                            .point_num {
+                                                position: absolute; right: 100%; top: 0;
+                                                font-size: 16px; font-weight: 300; letter-spacing: 0.8px;
+                                            }
+                                        }
+                                        .text_02 {
+                                            span {display: block;}
+                                            @include fc-b6();
+                                            margin-top: 12px;
+                                            font-size: 16px;line-height: 1.5;letter-spacing: -0.4px;
+                                        }
+                                    }
+                                }
+                                &.wrap_01 {
+                                    figure {
+                                        img {}
+                                        figcaption {
+                                            position: absolute; left: 60px; top: 494px;
+                                        }
+                                    }
+                                }
+                                &.wrap_02 {
+                                    margin-top: 376px;
+                                    figure {
+                                        display: flex; justify-content: flex-end;
+                                        img {}
+                                        figcaption {
+                                            position: absolute; right: 483px; top: 564px;
+                                        }
+                                    }
+                                }
+
+                                &.wrap_03 {
+                                    margin-top: 304px;
+                                    figure {
+                                        img {}
+                                        figcaption {
+                                            position: absolute; left: 60px; top: 564px;
+                                        }
+                                    }
+                                }
+
+                                &.wrap_04 {
+                                    margin-top: 368px;
+                                    figure {
+                                        display: flex; justify-content: space-between; align-items: center;
+                                        figcaption {
+                                            .text_02 {
+                                                letter-spacing: -0.45px;
+
+                                                >a {
+                                                    display: block;
+                                                    font-weight: 300;
+                                                    transition: .15s;
+                                                    &:hover {
+                                                        color: #23406d;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        img {
+                                            margin-left: 98px;
+                                            transition: .15s;
+                                            &:hover {
+                                                opacity: .7;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }   
+                    }
+                }
+            }
+
+            &.contents {
+                @include fixed-layout();
+                padding-top: 430px;
+                .sub_section {
+                    &.section_01 {
+                        max-width: 880px; margin: 0 auto;
+                        .content_wrap {
+                            .text_wrap {
+                                &.wrap_01 {
+                                    >span {
+                                        display: block;
+                                        &.text_01 {
+                                            font-size: 7.5rem; font-weight: 300; line-height: 1.07; letter-spacing: normal;
+                                        }
+                                        &.text_02 {
+                                            margin-top: 35px;
+                                            font-size: 13px; line-height: 1.85; letter-spacing: -0.33px;
+                                            .ico_arrow_02 {
+                                                margin-left: 32px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .img_wrap {
+                                margin-top: 160px;
+                                display: flex; flex-wrap: wrap; justify-content: space-between;
+
+                                .img_list {
+                                    img {}
+                                    figcaption {
+                                        margin-top: 20px;
+                                        >span {
+                                            display: block;
+                                            &.text_01 {
+                                                @include fc-b6();
+                                                font-size: 16px; font-weight: 300; line-height: 1.5; letter-spacing: -0.4px;
+                                            }
+                                            &.text_02 {
+                                                font-size: 3rem; line-height: normal; letter-spacing: -0.75px;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // left
+                                .wrap_01 {
+                                    .img_list {
+                                        margin-top: 160px;
+                                        &:first-child {
+                                            margin-top: 0;
+                                        }
+                                    }
+                                }
+
+                                // right
+                                .wrap_02 {
+                                    .img_list {
+                                        margin-top: 160px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            &.clients {
+                padding-top: 325px;
+                .sub_section {
+
+                    &.section_01 {
+                        margin-left: 825px;
+
+                        .content_wrap {
+                            position: relative;
+                            .img_wrap {
+                                position: relative;
+                                &.wrap_01 {
+                                    img {}
+                                    .text_wrap {
+                                        position: absolute;
+                                        left: -230px; top: 105px;
+                                        
+                                        >span {
+                                            display: block;
+                                            &.text_01 {
+                                                font-size: 7.5rem; font-weight: 300; line-height: 1.07; letter-spacing: normal;
+                                            }
+                                            &.text_02 {
+                                                @include font-p();
+                                                margin-top: 35px;
+                                                font-size: 13px;
+                                                .ico_arrow_02 {
+                                                    margin-left: 32px;
+                                                    display: inline-block;
+                                                }
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.section_02, &.section_03 {
+                        @include fixed-layout();
+                        margin: 160px auto 0;
+                        .content_wrap {
+                            display: flex; 
+                            .content_title {
+                                font-size: 6rem; font-weight: 300; line-height: 1.2; letter-spacing: -1.5px;
+                            }
+                            .img_wrap {
+                                margin-left: 200px;
+                                display: flex; flex-wrap: wrap;
+                                figure {
+                                    width: 25%; 
+                                    margin-bottom: 50px;
+                                    display: flex; align-items: center; justify-content: center;
+                                    img {}
+                                }
+                            }
+                        }
+                    }
+                    &.section_03 {
+                        margin: 110px auto 0;
+                    }
+                }
+            }
+
+            &.culture {
+                .sub_section {
+        
+                    &.sub_section_01 {
+                        position: relative;
+                        height: 100vh; width: 100%;
+                        background: url('../images/culture/mv.png') no-repeat center/cover;
+                        .text_wrap {
+                            @include fixed-layout();
+                            width: 100%; height: 100%;
+                            display: flex; justify-content: center;  flex-direction: column;
+                            
+                            .text_01 {
+                                font-size: 7.5rem ; font-weight: 300; line-height: 1.07; letter-spacing: normal;
+                            }
+                            .text_02 {
+                                margin-top: 35px;
+                                font-size: 13px; line-height: 1.85; letter-spacing: -0.33px;
+                                .ico_arrow_02 {
+                                    margin-left: 35px
+                                }
+                            }
+                        }
+                    }
+        
+                    &.sub_section_02 {
+                        margin-top: 160px;
+                        .content_wrap {
+                            &.wrap_01 {
+                                .text_wrap {
+                                    
+                                    @include fixed-layout();
+                                    > span {
+                                        display: block;
+                                        &.text_01 {
+                                            font-size: 4rem; font-weight: 300; line-height: 1.25; letter-spacing: -2px;
+                                        }
+                                        &.text_02 {
+                                            margin-top: 42px;
+                                            font-size: 18px; font-weight: 300; line-height: 1.5; letter-spacing: -0.45px;
+                                        }
+                                    }
+                                    
+                                  
+                                }
+                            }
+        
+                            &.wrap_02 {
+                                margin: 80px 0 0 220px;
+                                .swiper-container {
+                                    .swiper-wrapper {
+                                        .swiper-slide {
+                                            > figure {
+                                                img {}
+                                                .text_wrap {
+                                                    display: flex;
+                                                    margin-top: 45px;
+                                                    .wrap_01 {
+                                                        .text_01 {
+                                                            position: relative;
+                                                            font-size: 16px; font-weight: 300;   letter-spacing: 0.8px; line-height: normal;
+                                                            // .slide_bar {
+                                                            //     @include absolute-y(0, 50%)
+                                                            //     display: block;
+                                                            //     width: 395px; height: 1px; 
+                                                            //     background: #444;
+                                                            // }
+                                                        }
+                                                    }
+                                                    .wrap_02 {
+                                                        width: 395px;
+                                                        margin-left: 75px;
+                                                        > span {
+                                                            display: block;
+                                                            &.slide_bar {
+                                                                display: block;
+                                                                margin-top: 9px;
+                                                                height: 1px;
+                                                                background: #444;
+                                                            }
+                                                            &.text_01 {
+                                                                margin-top: 32px;
+                                                                font-size: 3rem; font-weight: 400; letter-spacing: -0.75px; line-height: normal;
+                                                            }
+                                                            &.text_02 {
+                                                                @include font-p();
+                                                                @include fc-b6();
+                                                                margin-top: 12px;
+                                                                font-size: 16px; font-weight: 300; line-height: 1.5; letter-spacing: -0.4px;
+                                                            }
+                                                        }
+                                                        
+                                                    }
+                                                    
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }   
+                    }
+        
+                }
+            }
+
+            
+            &.recruit {
+                .sub_section {
+        
+                    &.sub_section_01 {
+                        position: relative;
+                        height: 100vh; width: 100%;
+                        background: url('../images/recruit/mv.png') no-repeat center/cover;
+                        .text_wrap {
+                            @include fixed-layout();
+                            width: 100%; height: 100%;
+                            display: flex; justify-content: center;  flex-direction: column;
+                            
+                            .text_01 {
+                                font-size: 7.5rem ; font-weight: 300; line-height: 1.07; letter-spacing: normal;
+                            }
+                            .text_02 {
+                                margin-top: 35px;
+                                font-size: 13px; line-height: 1.85; letter-spacing: -0.33px;
+                                .ico_arrow_02 {
+                                    margin-left: 35px
+                                }
+                            }
+                        }
+                    }
+        
+                    &.sub_section_02 {
+                        margin-top: 160px;
+                        .content_wrap {
+                            @include fixed-layout();
+                            &.wrap_01 {
+                                > figure {
+                                    display: flex;
+                                    img {}
+                                    > figcaption {
+                                        margin-left: 145px;
+                                        >span {
+                                            display: block;
+                                            &.text_01 {
+                                                @include font-p();
+                                                font-size: 4rem; font-weight: 300; line-height: 1.25; letter-spacing: -2px;
+                                            }
+                                            &.text_02 {
+                                                @include font-p();
+                                                margin-top: 42px;
+                                                font-size: 18px; font-weight: 300; line-height: 1.5; letter-spacing: -0.45px;
+                                            }
+                                        }
+                                        .link_wrap {
+                                            margin-top: 160px;
+                                            font-size: 16px; line-height: normal; letter-spacing: -0.4px;
+                                            > a {
+                                                @include fc-b6();
+                                                display: block;
+                                                margin-top: 20px;
+                                                &:first-child {
+                                                    margin-top: 0;
+                                                }
+                                                strong {
+                                                    margin-bottom: 6px;
+                                                    color: #fff;
+                                                    display: block;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }   
+                    }
+        
+                }
+            }
+
+        }
+    }
+    // ====================================== main ======================================
+
+
+
+    // ====================================== footer ======================================
+    #footer {
+        margin-top: 160px;
+        padding-top: 180px;
+        height: 507px;
+        background: url('../images/pattern/footer_pattern_02.png') no-repeat center/cover;
+
+        a{
+            transition: .15s;
+            &:hover {
+                color: #23406d !important;
+            }
+        }
+
+        .footer_wrap {
+            @include fixed-layout();
+            font-size: 16px;
+            display: flex; 
+            .footer_left {
+                > ul {
+                    > li {
+                        > * {
+                            display: block;
+                        }
+                        margin-top: 20px;
+                        &:first-child { margin-top: 0;}
+                        strong {
+                            line-height: normal; letter-spacing: -0.4px;
+                        }
+                        a {
+                            @include fc-b6();
+                            margin-top: 6px;
+                            line-height: normal; letter-spacing: -0.4px;
+                        }
+                    }
+                }
+            }
+
+            .footer_center {
+                margin-left: 140px;
+                > ul {
+                    display: flex;
+                    > li {
+                        margin-left: 60px;
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                        
+                        > * {
+                            display: block
+                        }
+                        strong {
+                            margin-bottom: 6px;
+                            line-height: normal; letter-spacing: -0.4px;
+                        }
+                        span {
+                            @include fc-b6();
+                            line-height: 1.5;
+                            letter-spacing: -0.4px;
+                        }
+                    }
+                }
+            }
+
+            .footer_right {
+                margin-left: 287px;
+                display: flex;
+                > ul {
+                    display: flex; flex-direction: column;
+                    margin-left: 50px;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    li {
+                        margin-top: 12px;
+                        &:first-child {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // ====================================== footer ======================================
+    
+
+}

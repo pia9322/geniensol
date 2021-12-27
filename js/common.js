@@ -12,17 +12,10 @@ $(document).ready(function(){
         // }
     });    
 
-    
-    // const scroll = new LocomotiveScroll({
-    //     el: document.querySelector('[data-scroll-container]'),
-    //     smooth: true,
-    //     repeat: true,
-    //     getDirection: true,
-    //     lerp:0.035,
-    // });
 
 
 
+    // 메인 visual slide c
     var Mainswiper = new Swiper('.main_visual_section', {
         effect: "fade",
         slidesPerView: 1,
@@ -55,13 +48,11 @@ $(document).ready(function(){
         // }
     });
 
-
     
+    // 메인, culture silde
     var main_slide_01 = new Swiper('.main_silde_01 .swiper-container', {
         slidesPerView: 2.75,
         // centeredSlides: true,
-        loop: true,
-        loopAdditionalSlides : 1,
         // autoplay: {
         //     delay: 3000,
         //     disableOnInteraction: false,
@@ -84,6 +75,7 @@ $(document).ready(function(){
 
 
 
+    // full_menu
     function fullMenu () {
         let full_menu_bar = $('#full_menu_bar'), 
         full_menu_view = $('#full_menu_view')
@@ -98,13 +90,13 @@ $(document).ready(function(){
             }
         });
     }
-
     fullMenu();
 
 
  
 
 
+    // fadeout
     function contents() {
         var scroll = $(window).scrollTop()
         var windowHeight = $(window).height();
@@ -119,7 +111,6 @@ $(document).ready(function(){
             }
         })
     }
-
     $(window).scroll(contents);
 
 

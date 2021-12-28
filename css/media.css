@@ -902,6 +902,9 @@
   body main.sub_page.about .sub_section.section_03 {
     margin: 80px auto 0;
   }
+  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap figure figcaption .text_01 .point_num {
+    right: 0;
+  }
   body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_02 {
     margin-top: 50px;
   }

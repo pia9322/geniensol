@@ -981,6 +981,11 @@ body main.sub_page.about {
   padding-top: 325px;
 }
 
+body main.sub_page.about .sub_section {
+  -webkit-transition: .5s .1s;
+  transition: .5s .1s;
+}
+
 body main.sub_page.about .sub_section.section_01 {
   margin-left: 825px;
 }

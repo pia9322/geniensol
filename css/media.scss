@@ -389,34 +389,26 @@ body {
         &.sub_page {
             
             &.about {
-                padding-top: 325px;
+                padding-top: 200px;
                 .sub_section {
+                    padding: 0 5%;
+                    &:first-child {
+                        padding: 0;
+                    }
                     &.section_01 {
-                        margin-left: 825px;
-
+                        margin-left: 0;
+                        display: flex; align-items: center; justify-content: flex-end;
                         .content_wrap {
-                            position: relative;
                             .img_wrap {
-                                position: relative;
                                 &.wrap_01 {
                                     img {}
                                     .text_wrap {
-                                        position: absolute;
-                                        left: -230px; top: 105px;
+                                        left: 5%; top: 50%;
+                                        transform: translateY(-50%);
                                         
                                         >span {
-                                            display: block;
-                                            &.text_01 {
-                                                font-size: 7.5rem; font-weight: 300; line-height: 1.07; letter-spacing: normal;
-                                            }
                                             &.text_02 {
-                                                @include font-p();
-                                                margin-top: 35px;
-                                                font-size: 13px;
-                                                .ico_arrow_02 {
-                                                    margin-left: 32px;
-                                                    display: inline-block;
-                                                }
+                                                margin-top: 15px;
                                             }
                                         }
                                         
@@ -427,51 +419,32 @@ body {
                     }
 
                     &.section_02 {
-                        margin-left: 595px;
-                        margin-top: 160px;
+                        margin-left: 0;
+                        margin-top: 100px;
                         .content_wrap {
 
                             .detail_title {
                                 &.wrap_01 {
                                     .text_01 {
-                                        @include font-p();
-                                        font-size: 4rem; font-weight: 300; line-height: 1.25; letter-spacing: -2px;
                                     }
                                     .text_02 {
-                                        @include font-p();
-                                        margin-top: 42px;
-                                        font-size: 18px; font-weight: 300; line-height: 1.5; letter-spacing: -0.45px;
+                                        margin-top: 30px;
                                     }
                                 }
                             }
                             .detail_info {
-                                margin-top: 140px;
-                                display: flex;
+                                margin-top: 100px;
                                 >figure {
-                                    display: flex; align-items: center;
-                                    margin-left: 100px;
-                                    &:first-child {
-                                        margin-left: 0;
-                                    }
+                                    margin-left: 50px;
                                     .img_wrap {
-                                        display: flex; align-items: center; justify-content: center;
                                         img {}
                                     }
                                     figcaption {
-                                        margin-left: 30px;
+                                        margin-left: 20px;
                                         text-align: center;
                                         > span {
-                                            display: block;
-                                            text-align: left;
-                                            &.text_01 {
-                                                @include font-l();
-                                                font-size: 3rem; letter-spacing: -0.75px;
-                                            }
-                                            &.text_02 {
-                                                @include font-p();
-                                                @include fc-b6();
-                                                font-size: 16px; line-height: 1.5; letter-spacing: -0.4px; font-weight: 300;
-                                            }
+                                            &.text_01 {}
+                                            &.text_02 {}
                                         }
                                     }
                                 }
@@ -481,26 +454,18 @@ body {
 
                     &.section_03 {
                         max-width: 1480px;
-                        margin: 200px auto 0;
+                        margin: 100px auto 0;
                         .content_wrap {
                             .img_wrap {
                                 figure {
-                                    position: relative;
                                     img {}
                                     figcaption {
+                                        position: static !important;
                                         .text_01 {
-                                            position: relative;
-                                            font-size: 6rem;font-weight: 300;line-height: 1.2;letter-spacing: -1.5px;
                                             .point_num {
-                                                position: absolute; right: 100%; top: 0;
-                                                font-size: 16px; font-weight: 300; letter-spacing: 0.8px;
                                             }
                                         }
                                         .text_02 {
-                                            span {display: block;}
-                                            @include fc-b6();
-                                            margin-top: 12px;
-                                            font-size: 16px;line-height: 1.5;letter-spacing: -0.4px;
                                         }
                                     }
                                 }
@@ -508,56 +473,49 @@ body {
                                     figure {
                                         img {}
                                         figcaption {
-                                            position: absolute; left: 60px; top: 494px;
                                         }
                                     }
                                 }
                                 &.wrap_02 {
-                                    margin-top: 376px;
+                                    margin-top: 75px;
                                     figure {
-                                        display: flex; justify-content: flex-end;
+                                        flex-direction: column;
                                         img {}
                                         figcaption {
-                                            position: absolute; right: 483px; top: 564px;
                                         }
                                     }
                                 }
 
                                 &.wrap_03 {
-                                    margin-top: 304px;
+                                    margin-top: 75px;
                                     figure {
                                         img {}
                                         figcaption {
-                                            position: absolute; left: 60px; top: 564px;
                                         }
                                     }
                                 }
 
                                 &.wrap_04 {
-                                    margin-top: 368px;
+                                    margin-top: 75px;
                                     figure {
-                                        display: flex; justify-content: space-between; align-items: center;
+                                        flex-direction: column;
+                                        align-items: flex-start;
                                         figcaption {
+                                            order: 2;
+                                            text-align: left;
                                             .text_02 {
-                                                letter-spacing: -0.45px;
-
-                                                >a {
-                                                    display: block;
-                                                    font-weight: 300;
-                                                    transition: .15s;
-                                                    &:hover {
-                                                        color: #23406d;
-                                                    }
+                                            }
+                                        }
+                                        a {
+                                            img {
+                                                margin-left: 0;
+                                                transition: .15s;
+                                                &:hover {
+                                                    opacity: .7;
                                                 }
                                             }
                                         }
-                                        img {
-                                            margin-left: 98px;
-                                            transition: .15s;
-                                            &:hover {
-                                                opacity: .7;
-                                            }
-                                        }
+                                        
                                     }
                                 }
                             }
@@ -568,8 +526,7 @@ body {
             }
 
             &.contents {
-                @include fixed-layout();
-                padding-top: 430px;
+                padding-top: 200px;
                 .sub_section {
                     &.section_01 {
                         max-width: 880px; margin: 0 auto;
@@ -1444,6 +1401,8 @@ body {
 
         // ====================================== main ======================================
         main {
+
+            
             &.main_wrap {
                 .main_section {
                     &:not(:first-child) {
@@ -1612,6 +1571,136 @@ body {
                         }
                     }
     
+                }
+            }
+
+            
+            &.sub_page {
+                
+                &.about {
+                    padding-top: 75px;
+                    .sub_section {
+                        &:first-child {
+                        }
+                        &.section_01 {
+                            .content_wrap {
+                                .img_wrap {
+                                    &.wrap_01 {
+                                        img {}
+                                        .text_wrap {
+                                            
+                                            >span {
+                                                &.text_01 {
+                                                    font-size: 40px;
+                                                }
+                                                &.text_02 {
+                                                }
+                                            }
+                                            
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.section_02 {
+                            margin-top: 80px;
+                            .content_wrap {
+
+                                .detail_title {
+                                    &.wrap_01 {
+                                        .text_01 {
+                                        }
+                                        .text_02 {
+                                            margin-top: 10px;
+                                        }
+                                    }
+                                }
+                                .detail_info {
+                                    margin-top: 50px;
+                                    >figure {
+                                        margin-left: 0;
+                                        flex-direction: column; align-items: center; justify-content: center;
+                                        
+                                        .img_wrap {
+                                            height: 110px;
+                                            img {}
+                                        }
+                                        figcaption {
+                                            margin-left: 0;
+                                            > span {
+                                                text-align: center;
+                                                &.text_01 {}
+                                                &.text_02 {}
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &.section_03 {
+                            margin: 80px auto 0;
+                            .content_wrap {
+                                .img_wrap {
+                                    figure {
+                                        img {}
+                                        figcaption {
+                                            .text_01 {
+                                                .point_num {
+                                                }
+                                            }
+                                            .text_02 {
+                                            }
+                                        }
+                                    }
+                                    &.wrap_01 {
+                                        figure {
+                                            img {}
+                                            figcaption {
+                                            }
+                                        }
+                                    }
+                                    &.wrap_02 {
+                                        margin-top: 50px;
+                                        figure {
+                                            flex-direction: column;
+                                            img {}
+                                            figcaption {
+                                            }
+                                        }
+                                    }
+
+                                    &.wrap_03 {
+                                        margin-top: 50px;
+                                        figure {
+                                            img {}
+                                            figcaption {
+                                            }
+                                        }
+                                    }
+
+                                    &.wrap_04 {
+                                        margin-top: 50px;
+                                        figure {
+                                            figcaption {
+                                                .text_02 {
+                                                }
+                                            }
+                                            a {
+                                                img {
+                                                    &:hover {
+                                                    }
+                                                }
+                                            }
+                                            
+                                        }
+                                    }
+                                }
+
+                            }   
+                        }
+                    }
                 }
             }
         }

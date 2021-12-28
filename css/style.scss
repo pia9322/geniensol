@@ -920,6 +920,7 @@ body {
             &.about {
                 padding-top: 325px;
                 .sub_section {
+                    transition: .5s .1s;
                     &.section_01 {
                         margin-left: 825px;
 

@@ -40,46 +40,28 @@
   body main.main_wrap .main_section.main_section_03 .content_wrap .logo_wrap.wrap_01 a:first-child { margin-left: 0; }
   body main.main_wrap .main_section.main_section_03 .content_wrap .logo_wrap.wrap_01 a img { -webkit-transition: .15s; transition: .15s; }
   body main.main_wrap .main_section.main_section_03 .content_wrap .logo_wrap.wrap_01 a img:hover { opacity: .7; }
-  body main.sub_page.about { padding-top: 325px; }
-  body main.sub_page.about .sub_section.section_01 { margin-left: 825px; }
-  body main.sub_page.about .sub_section.section_01 .content_wrap { position: relative; }
-  body main.sub_page.about .sub_section.section_01 .content_wrap .img_wrap { position: relative; }
-  body main.sub_page.about .sub_section.section_01 .content_wrap .img_wrap.wrap_01 .text_wrap { position: absolute; left: -230px; top: 105px; }
-  body main.sub_page.about .sub_section.section_01 .content_wrap .img_wrap.wrap_01 .text_wrap > span { display: block; }
-  body main.sub_page.about .sub_section.section_01 .content_wrap .img_wrap.wrap_01 .text_wrap > span.text_01 { font-size: 7.5rem; font-weight: 300; line-height: 1.07; letter-spacing: normal; }
-  body main.sub_page.about .sub_section.section_01 .content_wrap .img_wrap.wrap_01 .text_wrap > span.text_02 { font-family: 'Pretendard'; margin-top: 35px; font-size: 13px; }
-  body main.sub_page.about .sub_section.section_01 .content_wrap .img_wrap.wrap_01 .text_wrap > span.text_02 .ico_arrow_02 { margin-left: 32px; display: inline-block; }
-  body main.sub_page.about .sub_section.section_02 { margin-left: 595px; margin-top: 160px; }
-  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_title.wrap_01 .text_01 { font-family: 'Pretendard'; font-size: 4rem; font-weight: 300; line-height: 1.25; letter-spacing: -2px; }
-  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_title.wrap_01 .text_02 { font-family: 'Pretendard'; margin-top: 42px; font-size: 18px; font-weight: 300; line-height: 1.5; letter-spacing: -0.45px; }
-  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info { margin-top: 140px; display: -webkit-box; display: -ms-flexbox; display: flex; }
-  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info > figure { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; margin-left: 100px; }
-  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info > figure:first-child { margin-left: 0; }
-  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info > figure .img_wrap { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
-  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info > figure figcaption { margin-left: 30px; text-align: center; }
-  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info > figure figcaption > span { display: block; text-align: left; }
-  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info > figure figcaption > span.text_01 { font-family: 'Lato'; font-size: 3rem; letter-spacing: -0.75px; }
-  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info > figure figcaption > span.text_02 { font-family: 'Pretendard'; color: #b6b6b6; font-size: 16px; line-height: 1.5; letter-spacing: -0.4px; font-weight: 300; }
-  body main.sub_page.about .sub_section.section_03 { max-width: 1480px; margin: 200px auto 0; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap figure { position: relative; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap figure figcaption .text_01 { position: relative; font-size: 6rem; font-weight: 300; line-height: 1.2; letter-spacing: -1.5px; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap figure figcaption .text_01 .point_num { position: absolute; right: 100%; top: 0; font-size: 16px; font-weight: 300; letter-spacing: 0.8px; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap figure figcaption .text_02 { color: #b6b6b6; margin-top: 12px; font-size: 16px; line-height: 1.5; letter-spacing: -0.4px; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap figure figcaption .text_02 span { display: block; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_01 figure figcaption { position: absolute; left: 60px; top: 494px; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_02 { margin-top: 376px; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_02 figure { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_02 figure figcaption { position: absolute; right: 483px; top: 564px; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_03 { margin-top: 304px; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_03 figure figcaption { position: absolute; left: 60px; top: 564px; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_04 { margin-top: 368px; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_04 figure { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: justify; -ms-flex-pack: justify; justify-content: space-between; -webkit-box-align: center; -ms-flex-align: center; align-items: center; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_04 figure figcaption .text_02 { letter-spacing: -0.45px; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_04 figure figcaption .text_02 > a { display: block; font-weight: 300; -webkit-transition: .15s; transition: .15s; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_04 figure figcaption .text_02 > a:hover { color: #23406d; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_04 figure img { margin-left: 98px; -webkit-transition: .15s; transition: .15s; }
-  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_04 figure img:hover { opacity: .7; }
-  body main.sub_page.contents { max-width: 1480px; margin: 0 auto; width: 100%; padding-top: 430px; }
+  body main.sub_page.about { padding-top: 200px; }
+  body main.sub_page.about .sub_section { padding: 0 5%; }
+  body main.sub_page.about .sub_section:first-child { padding: 0; }
+  body main.sub_page.about .sub_section.section_01 { margin-left: 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
+  body main.sub_page.about .sub_section.section_01 .content_wrap .img_wrap.wrap_01 .text_wrap { left: 5%; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); }
+  body main.sub_page.about .sub_section.section_01 .content_wrap .img_wrap.wrap_01 .text_wrap > span.text_02 { margin-top: 15px; }
+  body main.sub_page.about .sub_section.section_02 { margin-left: 0; margin-top: 100px; }
+  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_title.wrap_01 .text_02 { margin-top: 30px; }
+  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info { margin-top: 100px; }
+  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info > figure { margin-left: 50px; }
+  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info > figure figcaption { margin-left: 20px; text-align: center; }
+  body main.sub_page.about .sub_section.section_03 { max-width: 1480px; margin: 100px auto 0; }
+  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap figure figcaption { position: static !important; }
+  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_02 { margin-top: 75px; }
+  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_02 figure { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_03 { margin-top: 75px; }
+  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_04 { margin-top: 75px; }
+  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_04 figure { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: start; -ms-flex-align: start; align-items: flex-start; }
+  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_04 figure figcaption { -webkit-box-ordinal-group: 3; -ms-flex-order: 2; order: 2; text-align: left; }
+  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_04 figure a img { margin-left: 0; -webkit-transition: .15s; transition: .15s; }
+  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_04 figure a img:hover { opacity: .7; }
+  body main.sub_page.contents { padding-top: 200px; }
   body main.sub_page.contents .sub_section.section_01 { max-width: 880px; margin: 0 auto; }
   body main.sub_page.contents .sub_section.section_01 .content_wrap .text_wrap.wrap_01 > span { display: block; }
   body main.sub_page.contents .sub_section.section_01 .content_wrap .text_wrap.wrap_01 > span.text_01 { font-size: 7.5rem; font-weight: 300; line-height: 1.07; letter-spacing: normal; }
@@ -214,6 +196,20 @@
   body main.main_wrap .main_section.main_section_01 .content_wrap.wrap_02 .img_wrap.wrap_01 > div > figure.img_02 { margin-top: 40px; }
   body main.main_wrap .main_section.main_section_01 .content_wrap.wrap_02 .img_wrap.wrap_01 > div > figure.img_02 img { -webkit-box-ordinal-group: 1; -ms-flex-order: 0; order: 0; }
   body main.main_wrap .main_section.main_section_03 .content_wrap .logo_wrap.wrap_01 a { width: 50%; }
+  body main.sub_page.about { padding-top: 75px; }
+  body main.sub_page.about .sub_section.section_01 .content_wrap .img_wrap.wrap_01 .text_wrap > span.text_01 { font-size: 40px; }
+  body main.sub_page.about .sub_section.section_02 { margin-top: 80px; }
+  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_title.wrap_01 .text_02 { margin-top: 10px; }
+  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info { margin-top: 50px; }
+  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info > figure { margin-left: 0; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
+  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info > figure .img_wrap { height: 110px; }
+  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info > figure figcaption { margin-left: 0; }
+  body main.sub_page.about .sub_section.section_02 .content_wrap .detail_info > figure figcaption > span { text-align: center; }
+  body main.sub_page.about .sub_section.section_03 { margin: 80px auto 0; }
+  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_02 { margin-top: 50px; }
+  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_02 figure { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
+  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_03 { margin-top: 50px; }
+  body main.sub_page.about .sub_section.section_03 .content_wrap .img_wrap.wrap_04 { margin-top: 50px; }
   body #footer .footer_wrap { -webkit-box-orient: horizontal; -webkit-box-direction: normal; -ms-flex-direction: row; flex-direction: row; }
   body #footer .footer_wrap .footer_left { width: 50%; }
   body #footer .footer_wrap .footer_left > ul > li { margin-top: 5px; }

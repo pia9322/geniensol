@@ -1219,7 +1219,10 @@ body {
                                     width: 25%; 
                                     margin-bottom: 50px;
                                     display: flex; align-items: center; justify-content: center;
-                                    img {}
+                                    a {
+                                        pointer-events: none;
+                                        img {}
+                                    }
                                 }
                             }
                         }

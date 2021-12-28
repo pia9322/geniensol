@@ -729,7 +729,11 @@
                     cursor.style.top = mouseY + 'px';
                 });
             }
-            MainCursor()
+            
+            let winWid = window.innerWidth;
+            767 <= winWid ? MainCursor() : null;
+
+
         });
     </script>
 

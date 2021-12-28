@@ -435,6 +435,8 @@ body main.sub_page.clients .sub_section.section_02 .content_wrap .img_wrap, body
 
 body main.sub_page.clients .sub_section.section_02 .content_wrap .img_wrap figure, body main.sub_page.clients .sub_section.section_03 .content_wrap .img_wrap figure { width: 25%; margin-bottom: 50px; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
 
+body main.sub_page.clients .sub_section.section_02 .content_wrap .img_wrap figure a, body main.sub_page.clients .sub_section.section_03 .content_wrap .img_wrap figure a { pointer-events: none; }
+
 body main.sub_page.clients .sub_section.section_03 { margin: 110px auto 0; }
 
 body main.sub_page.culture .sub_section.sub_section_01 { position: relative; height: 100vh; width: 100%; background: url("../images/culture/mv.png") no-repeat center/cover; }

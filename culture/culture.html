@@ -240,7 +240,7 @@
                 </p>
             </div>
 
-            <div class="content_wrap wrap_02 slide_content main_silde_01">
+            <div class="content_wrap wrap_02 slide_content main_silde_01" data-aos="fade-up">
 
                 <div class="swiper-container">
                     <div class="swiper-wrapper">
@@ -576,7 +576,11 @@
                     cursor.style.top = mouseY + 'px';
                 });
             }
-            MainCursor()
+           
+            let winWid = window.innerWidth;
+
+            767 <= winWid ? MainCursor() : null;
+
         });
     </script>
 

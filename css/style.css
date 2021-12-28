@@ -1387,6 +1387,10 @@ body main.sub_page.clients .sub_section.section_02 .content_wrap .img_wrap figur
           justify-content: center;
 }
 
+body main.sub_page.clients .sub_section.section_02 .content_wrap .img_wrap figure a, body main.sub_page.clients .sub_section.section_03 .content_wrap .img_wrap figure a {
+  pointer-events: none;
+}
+
 body main.sub_page.clients .sub_section.section_03 {
   margin: 110px auto 0;
 }

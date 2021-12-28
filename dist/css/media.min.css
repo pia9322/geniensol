@@ -40,7 +40,7 @@
   body main.main_wrap .main_section.main_section_03 .content_wrap .logo_wrap.wrap_01 a:first-child { margin-left: 0; }
   body main.main_wrap .main_section.main_section_03 .content_wrap .logo_wrap.wrap_01 a img { -webkit-transition: .15s; transition: .15s; }
   body main.main_wrap .main_section.main_section_03 .content_wrap .logo_wrap.wrap_01 a img:hover { opacity: .7; }
-  body main.sub_page.about { padding-top: 200px; }
+  body main.sub_page.about { padding-top: 100px; }
   body main.sub_page.about .sub_section { padding: 0 5%; }
   body main.sub_page.about .sub_section:first-child { padding: 0; }
   body main.sub_page.about .sub_section.section_01 { margin-left: 0; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }

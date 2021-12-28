@@ -550,14 +550,16 @@ body #full_menu .full_menu_wrap #full_menu_bar {
 
 body #full_menu .full_menu_wrap #full_menu_view {
   position: fixed;
-  right: -150%;
+  right: 0;
   top: 0;
   z-index: 9998;
   width: 100vw;
   height: 100vh;
+  -webkit-transition: .3s;
+  transition: .3s;
   background-color: #010d21;
-  -webkit-transition: .5s;
-  transition: .5s;
+  opacity: 0;
+  visibility: hidden;
 }
 
 body #full_menu .full_menu_wrap #full_menu_view .view_wrap {
@@ -667,7 +669,8 @@ body #full_menu .full_menu_wrap #full_menu_view .view_wrap .content.content_02 .
 }
 
 body #full_menu .full_menu_wrap #full_menu_view.active {
-  right: 0;
+  opacity: 1;
+  visibility: visible;
 }
 
 body main {

@@ -550,10 +550,11 @@ body {
 
                 #full_menu_view {
                     // display: none;
-                    position: fixed; right: -150%; top: 0; z-index: 9998;
+                    position: fixed; right: 0; top: 0; z-index: 9998;
                     width: 100vw; height: 100vh;
+                    transition: .3s;
                     background-color: #010d21;
-                    transition: .5s;
+                    opacity: 0; visibility: hidden;
 
 
                     .view_wrap {
@@ -641,7 +642,7 @@ body {
                     
 
                     &.active {
-                        right: 0;
+                        opacity: 1; visibility: visible;
                     }
                 }
             }

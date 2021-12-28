@@ -931,7 +931,7 @@
     display: none;
   }
   body #full_menu .full_menu_wrap #full_menu_bar {
-    top: 10%;
+    top: 20%;
   }
   body #full_menu .full_menu_wrap #full_menu_view .view_wrap {
     -webkit-box-orient: vertical;

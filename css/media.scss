@@ -2144,6 +2144,190 @@ body {
         }
     }
 
+    body {
+        main {
+            &.main_wrap {
+                .text_01.main_text_title {
+                }
+                .main_section {
+                    
+                    &:not(:first-child) {
+                        
+                    }
+        
+                    &.main_visual_section {
+        
+                        .mv_wrap {
+                            
+                            .mv {
+                                // mv visual
+                                > video {
+                                    source {
+                                    }
+                                }
+                                &.mv_01 { }
+                                &.mv_02 {}
+                                &.mv_03 {}
+        
+        
+                                // mv text
+                                .mv_text {
+                                    .text_wrap {
+                                        .text_01 {
+                                        }
+                                        .text_link {
+                                        }
+                                        
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+        
+                    &.main_section_01 {
+                        .content_wrap {
+                            &.wrap_01 {
+                                .text_wrap {
+                                 
+                                    .text_link {
+                                    }
+                                }
+        
+                                .detail_wrap {
+                                    .detail_text {
+                                        .text_01 {
+                                            font-size: 16px;
+                                        }
+                                    }
+        
+                                    .detail_img {
+                                        >figure {
+                                            .img_wrap {
+                                                img {}
+                                            }
+                                            figcaption {
+                                                > span {
+                                                    &.text_01 {
+                                                    }
+                                                    &.text_02 {
+                                                        font-size: 14px;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        .ico_plus {
+                                        }
+                                    }
+                                }
+                            }
+        
+                            &.wrap_02 {
+                                .img_wrap {
+                                    &.wrap_01 {
+                                        > div {
+                                            >figure {
+                                                >img {}
+                                                >figcaption {
+                                                    .text_wrap {
+                                                        > span {
+                                                            &.text_01{
+                                                            }
+                                                            &.text_02{
+                                                                font-size: 16px;
+                                                            }
+                                                        }
+                                                        
+                                                    }
+                                                }
+        
+                                                &.img_01 {}
+                                                &.img_02 {
+                                                }
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+        
+        
+                        }
+                    }
+        
+                    &.main_section_02 {
+                        .content_wrap {
+                            &.wrap_01 {
+                                .text_wrap {
+                                    
+                                    .text_01 {}
+                                    .text_link {
+                                    }
+                                }
+                            }
+        
+                            &.wrap_02 {
+                                .swiper-container {
+                                    .swiper-wrapper {
+                                        .swiper-slide {
+                                            > figure {
+                                                img {}
+                                                .text_wrap {
+                                                    .wrap_01 {
+                                                        .text_01 {
+                                                            font-size: 14px;
+                                             
+                                                        }
+                                                    }
+                                                    .wrap_02 {
+                                                        > span {
+                                                            &.slide_bar {
+                                                            }
+                                                            &.text_01 {
+                                                            }
+                                                            &.text_02 {
+                                                                @include font-p();
+                                                                @include fc-b6();
+                                                                font-size: 14px;
+                                                            }
+                                                        }
+                                                        
+                                                    }
+                                                    
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }   
+                    }
+        
+                    &.main_section_03 {
+                        .content_wrap {
+                            .text_wrap {
+                                &.wrap_01 {
+                                }
+                            }
+                            .logo_wrap {
+                                &.wrap_01 {
+                                    a {
+                                        &:first-child {
+                                        }
+                                        img {}
+                                    }
+                                    
+                                }
+                            }
+                        }
+                    }
+        
+                }
+            }
+        }
+    }
+    
+
 
 }
 // ====================================479====================================

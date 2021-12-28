@@ -231,5 +231,10 @@
   .table_wrap .table_rec thead tr th:nth-of-type(1), .table_wrap .table_rec thead tr th:nth-of-type(4), .table_wrap .table_rec thead tr th:nth-of-type(5) { width: auto; }
   .table_wrap .table_rec thead tr th:nth-of-type(2) { width: auto; }
   .table_wrap .table_rec thead tr th:nth-of-type(3) { width: auto; }
-  .table_wrap .table_rec tbody tr td { padding: 20px; } }
+  .table_wrap .table_rec tbody tr td { padding: 20px; }
+  body main.main_wrap .main_section.main_section_01 .content_wrap.wrap_01 .detail_wrap .detail_text .text_01 { font-size: 16px; }
+  body main.main_wrap .main_section.main_section_01 .content_wrap.wrap_01 .detail_wrap .detail_img > figure figcaption > span.text_02 { font-size: 14px; }
+  body main.main_wrap .main_section.main_section_01 .content_wrap.wrap_02 .img_wrap.wrap_01 > div > figure > figcaption .text_wrap > span.text_02 { font-size: 16px; }
+  body main.main_wrap .main_section.main_section_02 .content_wrap.wrap_02 .swiper-container .swiper-wrapper .swiper-slide > figure .text_wrap .wrap_01 .text_01 { font-size: 14px; }
+  body main.main_wrap .main_section.main_section_02 .content_wrap.wrap_02 .swiper-container .swiper-wrapper .swiper-slide > figure .text_wrap .wrap_02 > span.text_02 { font-family: 'Pretendard'; color: #b6b6b6; font-size: 14px; } }
 /*# sourceMappingURL=media.min.css.map */

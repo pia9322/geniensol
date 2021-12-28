@@ -161,7 +161,10 @@
   body header .header_wrap { -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; }
   body header .header_wrap .header_left { width: 125px; }
   body header .header_wrap .header_center { display: none; }
-  body #full_menu .full_menu_wrap #full_menu_bar { top: 40%; }
+  body #full_menu .full_menu_wrap #full_menu_bar { width: 50px; top: 13px; }
+  body #full_menu .full_menu_wrap #full_menu_bar::after, body #full_menu .full_menu_wrap #full_menu_bar::before { content: ''; position: absolute; left: 0; width: 100%; height: 1px; background: #fff; }
+  body #full_menu .full_menu_wrap #full_menu_bar::after { bottom: -4px; }
+  body #full_menu .full_menu_wrap #full_menu_bar::before { bottom: -8px; display: none; }
   body #full_menu .full_menu_wrap #full_menu_view .view_wrap { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
   body #full_menu .full_menu_wrap #full_menu_view .view_wrap .content.content_01 { width: 100%; height: 100%; }
   body #full_menu .full_menu_wrap #full_menu_view .view_wrap .content.content_01 .content_wrap > li { margin-top: 10px; }

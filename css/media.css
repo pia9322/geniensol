@@ -629,7 +629,23 @@
     display: none;
   }
   body #full_menu .full_menu_wrap #full_menu_bar {
-    top: 40%;
+    width: 50px;
+    top: 13px;
+  }
+  body #full_menu .full_menu_wrap #full_menu_bar::after, body #full_menu .full_menu_wrap #full_menu_bar::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #fff;
+  }
+  body #full_menu .full_menu_wrap #full_menu_bar::after {
+    bottom: -4px;
+  }
+  body #full_menu .full_menu_wrap #full_menu_bar::before {
+    bottom: -8px;
+    display: none;
   }
   body #full_menu .full_menu_wrap #full_menu_view .view_wrap {
     -webkit-box-orient: vertical;

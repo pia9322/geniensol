@@ -1377,7 +1377,21 @@ body {
         #full_menu {
             .full_menu_wrap {
                 #full_menu_bar {
-                    top: 40%;
+                    width: 50px;
+                    top: 13px;
+                    &::after, &::before {
+                        content: '';
+                        position: absolute; left: 0;
+                        width: 100%; height: 1px;
+                        background: #fff;
+                    }
+                    &::after {
+                        bottom: -4px;
+                    }
+                    &::before {
+                        bottom: -8px;
+                        display: none;
+                    }
                 }
 
                 #full_menu_view {
@@ -1424,6 +1438,7 @@ body {
                             }
                         }
                     }
+
                 }
             }
         }

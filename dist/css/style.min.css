@@ -149,8 +149,6 @@ body header .header_wrap .header_center > .depth_01:first-child { margin-left: 0
 
 body header .header_wrap .header_center > .depth_01 > a { height: 100%; display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-align: center; -ms-flex-align: center; align-items: center; font-size: 16px; letter-spacing: -0.4px; }
 
-body header .header_wrap .header_full { display: none; }
-
 body header .header_wrap:hover .header_center .depth_01 { opacity: 1; visibility: visible; }
 
 body #full_menu { position: relative; }

@@ -1,44 +1,45 @@
-@mixin max-width($width) {
-    max-width: $width;
-    margin: 0 auto;
-}
-
-@mixin layoutBoxColor {
-    border: 2px solid #f00;
-}
-
-@mixin header-height {
-    height: 70px;
-}
-
-@mixin header-height-1100 {
-    height: 60px;
-}
+// ====================================default mixin====================================
+@mixin fixed-layout {max-width: 1480px; margin: 0 auto; width: 100%;}
+@mixin layoutBoxColor {border: 2px solid #f00;}
+@mixin header-height {height: 62px;}
+@mixin font-p {font-family: 'Pretendard';}
+@mixin font-l {font-family: 'Lato';}
+@mixin fc-b6 {color: #b6b6b6;}
 
 
-@mixin absolute-left($left, $top) {
+
+// 1920
+@mixin margin-top-1920() {margin-top: 100px;}
+@mixin margin-bottom-1920() {margin-bottom: 100px;}
+
+// 1100
+@mixin margin-top-1100() {margin-top: 75px;}
+@mixin margin-bottom-1100() {margin-bottom: 75px;}
+
+
+@mixin absolute-center {
     position: absolute;
-    left: $left;
-    top: $top;
+    left: 50%; top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+@mixin absolute-x($left, $top) {
+    position: absolute;
+    left: $left; top: $top;
     transform: translateX(-$left);
 }
 
-@mixin absolute-top($left, $top) {
+@mixin absolute-y($left, $top) {
     position: absolute;
-    left: $left;
-    top: $top;
+    left: $left; top: $top;
     transform: translateY(-$top);
 }
 
 @mixin visual-text($fs) {
-    width: 100%;
-    height: 100%;
+    width: 100%; height: 100%;
     font-size: $fs;
     color: #fff;
-    font-family: "asn-t";
-    display: flex;
-    align-items: center;
-    justify-content: center;
+    display: flex; align-items: center; justify-content: center;
     line-height: 1.25;
     letter-spacing: -0.64px;
     text-transform: uppercase;
@@ -47,8 +48,7 @@
 @mixin sub-menu-bar($height, $margin) {
     content: '';
     display: inline-block;
-    width: 1px;
-    height: $height;
+    width: 1px; height: $height;
     background: #7bcef1;
     margin-left: $margin;
 }
@@ -62,33 +62,887 @@
     text-align: center;
 }
 
-@mixin margin-top-1920() {
-    margin-top: 100px;
+@mixin after_bar_01 {
+    content: '';
+    position: absolute; left: 0; bottom: 0;
+    height: 2px;
+    width: 100%;
+    background: #00B050;
+    opacity: 0;
+    transition: .3s;
 }
 
-@mixin margin-bottom-1920() {
-    margin-bottom: 100px;
+@mixin board_text {
+    white-space: nowrap; text-overflow: ellipsis; overflow: hidden;
 }
+@mixin border_01 {
+    background: #fff7e0; border: 1px solid #23406d; border-radius: 10px;
+}
+// ====================================default mixin====================================
 
-@mixin margin-top-1100() {
-    margin-top: 75px;
-}
-
-@mixin margin-bottom-1100() {
-    margin-bottom: 75px;
-}
 
 
 // ====================================4K====================================
-@media (min-width:2560px) {
+@media (min-width:2590px) {}
+
+
+
+
+// ====================================1480====================================
+@media (max-width: 1480px) {
+    
+body {
+
+    
+    
+    // ====================================== header ======================================
+    header {
+        margin-top: 25px;
+        padding: 0 5%;
+
+
+        .header_wrap {
+            .header_left {
+                width: 150px;
+            }
+
+            // center_menu
+            .header_center {
+                >.depth_01 {
+                    margin-left: 20px;
+                }
+
+            }
+        }
+    }
+    // ====================================== header ======================================
+
+    // ========================================== right_full_menu ==========================================  
+    #full_menu {
+        .full_menu_wrap {
+            #full_menu_bar {
+                width: 70px;
+            }
+
+            #full_menu_view {
+                .view_wrap {
+                    .content {
+                        display: flex; align-items: center; justify-content: center;
+                        padding-top: 0;
+                        &.content_01 {
+                            padding-left: 0;
+                            .content_wrap {
+                                > li {
+                                    margin-top: 10px;
+                                    &:first-child {}
+                                    > a{
+                                        i {
+                                        }
+                                        span {
+                                            // font-size: 6rem;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                        &.content_02 {
+                            padding-left: 0;
+                            padding: 2.5%;
+                            .content_wrap {
+
+                                .contact_title {
+                                    // font-size: 6rem; 
+                                }
+
+                                .contact_info {
+                                    > li {
+                                        margin-top: 20px;
+                                        strong {}  
+                                        a {
+                                            margin-top: 5px;
+                                        }
+                                    }
+                                }
+
+                                .contact_detail {
+                                    margin-top: 30px;
+                                    > li {
+                                        margin-left: 30px;
+                                        strong {}
+                                        span {}
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // ========================================== right_full_menu ==========================================  
+
+
+    // ====================================== main ======================================
+    main {
+        &.main_wrap {
+            .main_section {
+                &:not(:first-child) {
+                    
+                }
+    
+                &.main_visual_section {
+                    .mv_wrap {
+                        
+                        .mv {
+                            > video {
+                                source {}
+                            }
+                            &.mv_01 {}
+                            &.mv_02 {}
+                            &.mv_03 {}
+    
+    
+                            // mv text
+                            .mv_text {
+                                padding: 0 5%;
+                                .text_wrap {
+                                    .text_01 {
+                                    }
+                                    .text_link {
+                                        margin-top: 15px;
+                                    }
+                                    
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+    
+                &.main_section_01 {
+                    padding: 0 5%;
+                    .content_wrap {
+                        &.wrap_01 {
+                            padding-top: 100px;
+                            .text_wrap {
+                             
+                                .text_link {
+                                    margin-top: 15px;
+                                }
+                            }
+    
+                            .detail_wrap {
+                                width: 100%;
+                                margin-left: 100px;
+    
+                                .detail_text {
+                                    .text_01 {
+                                    }
+                                }
+    
+                                .detail_img {
+                                    margin-top: 40px;
+                                    >figure {
+                                        .img_wrap {
+                                            img {}
+                                        }
+                                        figcaption {
+                                            margin-top: 20px;
+                                            > span {
+                                                &.text_01 {}
+                                                &.text_02 {}
+                                            }
+                                        }
+                                    }
+                                    .ico_plus {
+                                        padding: 0 75px;
+                                    }
+                                }
+                            }
+                        }
+    
+                        &.wrap_02 {
+                            padding-top: 100px;
+                            .img_wrap {
+                                &.wrap_01 {
+                                    > div {
+                                        >figure {
+                                            width: 50%;
+
+                                            >img {}
+                                            >figcaption {
+                                                position: absolute; left: 20px; bottom: 0;
+                                                .text_wrap {
+                                                    > span {
+                                                        display: block;
+                                                        &.text_01{}
+                                                        &.text_02{}
+                                                    }
+                                                    
+                                                }
+                                            }
+    
+                                            &.img_01 {}
+                                            &.img_02 {
+                                                margin: 40px 0 0 auto;
+                                            }
+                                        }
+                                    }
+                                    
+                                }
+                            }
+                        }
+    
+    
+                    }
+                }
+    
+                &.main_section_02 {
+                    margin-top: 100px;
+                    padding: 0 5%;
+                    .content_wrap {
+                        &.wrap_01 {
+                            .text_wrap {
+                                .text_01 {}
+                                .text_link {
+                                    width: 190px;
+                                    margin-top: 15px;
+                                    justify-content: flex-start;
+                                }
+                            }
+                        }
+    
+                        &.wrap_02 {
+                            margin: 40px 0 0 0;
+                            .swiper-container {
+                                .swiper-wrapper {
+                                    .swiper-slide {
+                                        > figure {
+                                            img {}
+                                            .text_wrap {
+                                                display: flex;
+                                                margin-top: 20px;
+                                                .wrap_01 {
+                                                    .text_01 {
+                                                    }
+                                                }
+                                                .wrap_02 {
+                                                    width: 100%;
+                                                    margin-left: 10px;
+                                                    > span {
+                                                        &.slide_bar {
+                                                            margin-top: 5px;
+                                                        }
+                                                        &.text_01 {
+                                                            margin-top: 20px;
+                                                        }
+                                                        &.text_02 {
+                                                            margin-top: 8px;
+                                                        }
+                                                    }
+                                                    
+                                                }
+                                                
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }   
+                }
+    
+                &.main_section_03 {
+                    margin-top: 100px;
+                    padding: 0 5%;
+                    .content_wrap {
+                        flex-direction: column;
+                        .text_wrap {
+                            &.wrap_01 {
+                            }
+                        }
+                        .logo_wrap {
+                            margin-left: 0;
+                            &.wrap_01 {
+                                display: flex; flex-wrap: wrap;
+                                a {
+                                    margin-left: 40px;
+                                    &:first-child {
+                                        margin-left: 0;
+                                    }
+                                    img {
+                                        transition: .15s;
+                                        &:hover {
+                                            opacity: .7;
+                                        }
+                                    }
+                                }
+                                
+                            }
+                        }
+                    }
+                }
+    
+            }
+        }
+
+        &.sub_page {
+            
+            &.about {
+                padding-top: 325px;
+                .sub_section {
+                    &.section_01 {
+                        margin-left: 825px;
+
+                        .content_wrap {
+                            position: relative;
+                            .img_wrap {
+                                position: relative;
+                                &.wrap_01 {
+                                    img {}
+                                    .text_wrap {
+                                        position: absolute;
+                                        left: -230px; top: 105px;
+                                        
+                                        >span {
+                                            display: block;
+                                            &.text_01 {
+                                                font-size: 7.5rem; font-weight: 300; line-height: 1.07; letter-spacing: normal;
+                                            }
+                                            &.text_02 {
+                                                @include font-p();
+                                                margin-top: 35px;
+                                                font-size: 13px;
+                                                .ico_arrow_02 {
+                                                    margin-left: 32px;
+                                                    display: inline-block;
+                                                }
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.section_02 {
+                        margin-left: 595px;
+                        margin-top: 160px;
+                        .content_wrap {
+
+                            .detail_title {
+                                &.wrap_01 {
+                                    .text_01 {
+                                        @include font-p();
+                                        font-size: 4rem; font-weight: 300; line-height: 1.25; letter-spacing: -2px;
+                                    }
+                                    .text_02 {
+                                        @include font-p();
+                                        margin-top: 42px;
+                                        font-size: 18px; font-weight: 300; line-height: 1.5; letter-spacing: -0.45px;
+                                    }
+                                }
+                            }
+                            .detail_info {
+                                margin-top: 140px;
+                                display: flex;
+                                >figure {
+                                    display: flex; align-items: center;
+                                    margin-left: 100px;
+                                    &:first-child {
+                                        margin-left: 0;
+                                    }
+                                    .img_wrap {
+                                        display: flex; align-items: center; justify-content: center;
+                                        img {}
+                                    }
+                                    figcaption {
+                                        margin-left: 30px;
+                                        text-align: center;
+                                        > span {
+                                            display: block;
+                                            text-align: left;
+                                            &.text_01 {
+                                                @include font-l();
+                                                font-size: 3rem; letter-spacing: -0.75px;
+                                            }
+                                            &.text_02 {
+                                                @include font-p();
+                                                @include fc-b6();
+                                                font-size: 16px; line-height: 1.5; letter-spacing: -0.4px; font-weight: 300;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.section_03 {
+                        max-width: 1480px;
+                        margin: 200px auto 0;
+                        .content_wrap {
+                            .img_wrap {
+                                figure {
+                                    position: relative;
+                                    img {}
+                                    figcaption {
+                                        .text_01 {
+                                            position: relative;
+                                            font-size: 6rem;font-weight: 300;line-height: 1.2;letter-spacing: -1.5px;
+                                            .point_num {
+                                                position: absolute; right: 100%; top: 0;
+                                                font-size: 16px; font-weight: 300; letter-spacing: 0.8px;
+                                            }
+                                        }
+                                        .text_02 {
+                                            span {display: block;}
+                                            @include fc-b6();
+                                            margin-top: 12px;
+                                            font-size: 16px;line-height: 1.5;letter-spacing: -0.4px;
+                                        }
+                                    }
+                                }
+                                &.wrap_01 {
+                                    figure {
+                                        img {}
+                                        figcaption {
+                                            position: absolute; left: 60px; top: 494px;
+                                        }
+                                    }
+                                }
+                                &.wrap_02 {
+                                    margin-top: 376px;
+                                    figure {
+                                        display: flex; justify-content: flex-end;
+                                        img {}
+                                        figcaption {
+                                            position: absolute; right: 483px; top: 564px;
+                                        }
+                                    }
+                                }
+
+                                &.wrap_03 {
+                                    margin-top: 304px;
+                                    figure {
+                                        img {}
+                                        figcaption {
+                                            position: absolute; left: 60px; top: 564px;
+                                        }
+                                    }
+                                }
+
+                                &.wrap_04 {
+                                    margin-top: 368px;
+                                    figure {
+                                        display: flex; justify-content: space-between; align-items: center;
+                                        figcaption {
+                                            .text_02 {
+                                                letter-spacing: -0.45px;
+
+                                                >a {
+                                                    display: block;
+                                                    font-weight: 300;
+                                                    transition: .15s;
+                                                    &:hover {
+                                                        color: #23406d;
+                                                    }
+                                                }
+                                            }
+                                        }
+                                        img {
+                                            margin-left: 98px;
+                                            transition: .15s;
+                                            &:hover {
+                                                opacity: .7;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                        }   
+                    }
+                }
+            }
+
+            &.contents {
+                @include fixed-layout();
+                padding-top: 430px;
+                .sub_section {
+                    &.section_01 {
+                        max-width: 880px; margin: 0 auto;
+                        .content_wrap {
+                            .text_wrap {
+                                &.wrap_01 {
+                                    >span {
+                                        display: block;
+                                        &.text_01 {
+                                            font-size: 7.5rem; font-weight: 300; line-height: 1.07; letter-spacing: normal;
+                                        }
+                                        &.text_02 {
+                                            margin-top: 35px;
+                                            font-size: 13px; line-height: 1.85; letter-spacing: -0.33px;
+                                            .ico_arrow_02 {
+                                                margin-left: 32px;
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+
+                            .img_wrap {
+                                margin-top: 160px;
+                                display: flex; flex-wrap: wrap; justify-content: space-between;
+
+                                .img_list {
+                                    img {}
+                                    figcaption {
+                                        margin-top: 20px;
+                                        >span {
+                                            display: block;
+                                            &.text_01 {
+                                                @include fc-b6();
+                                                font-size: 16px; font-weight: 300; line-height: 1.5; letter-spacing: -0.4px;
+                                            }
+                                            &.text_02 {
+                                                font-size: 3rem; line-height: normal; letter-spacing: -0.75px;
+                                            }
+                                        }
+                                    }
+                                }
+
+                                // left
+                                .wrap_01 {
+                                    .img_list {
+                                        margin-top: 160px;
+                                        &:first-child {
+                                            margin-top: 0;
+                                        }
+                                    }
+                                }
+
+                                // right
+                                .wrap_02 {
+                                    .img_list {
+                                        margin-top: 160px;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            
+            &.clients {
+                padding-top: 325px;
+                .sub_section {
+
+                    &.section_01 {
+                        margin-left: 825px;
+
+                        .content_wrap {
+                            position: relative;
+                            .img_wrap {
+                                position: relative;
+                                &.wrap_01 {
+                                    img {}
+                                    .text_wrap {
+                                        position: absolute;
+                                        left: -230px; top: 105px;
+                                        
+                                        >span {
+                                            display: block;
+                                            &.text_01 {
+                                                font-size: 7.5rem; font-weight: 300; line-height: 1.07; letter-spacing: normal;
+                                            }
+                                            &.text_02 {
+                                                @include font-p();
+                                                margin-top: 35px;
+                                                font-size: 13px;
+                                                .ico_arrow_02 {
+                                                    margin-left: 32px;
+                                                    display: inline-block;
+                                                }
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                    &.section_02, &.section_03 {
+                        @include fixed-layout();
+                        margin: 160px auto 0;
+                        .content_wrap {
+                            display: flex; 
+                            .content_title {
+                                font-size: 6rem; font-weight: 300; line-height: 1.2; letter-spacing: -1.5px;
+                            }
+                            .img_wrap {
+                                margin-left: 200px;
+                                display: flex; flex-wrap: wrap;
+                                figure {
+                                    width: 25%; 
+                                    margin-bottom: 50px;
+                                    display: flex; align-items: center; justify-content: center;
+                                    img {}
+                                }
+                            }
+                        }
+                    }
+                    &.section_03 {
+                        margin: 110px auto 0;
+                    }
+                }
+            }
+
+            &.culture {
+                .sub_section {
+        
+                    &.sub_section_01 {
+                        position: relative;
+                        height: 100vh; width: 100%;
+                        background: url('../images/culture/mv.png') no-repeat center/cover;
+                        .text_wrap {
+                            @include fixed-layout();
+                            width: 100%; height: 100%;
+                            display: flex; justify-content: center;  flex-direction: column;
+                            
+                            .text_01 {
+                                font-size: 7.5rem ; font-weight: 300; line-height: 1.07; letter-spacing: normal;
+                            }
+                            .text_02 {
+                                margin-top: 35px;
+                                font-size: 13px; line-height: 1.85; letter-spacing: -0.33px;
+                                .ico_arrow_02 {
+                                    margin-left: 35px
+                                }
+                            }
+                        }
+                    }
+        
+                    &.sub_section_02 {
+                        margin-top: 160px;
+                        .content_wrap {
+                            &.wrap_01 {
+                                .text_wrap {
+                                    
+                                    @include fixed-layout();
+                                    > span {
+                                        display: block;
+                                        &.text_01 {
+                                            font-size: 4rem; font-weight: 300; line-height: 1.25; letter-spacing: -2px;
+                                        }
+                                        &.text_02 {
+                                            margin-top: 42px;
+                                            font-size: 18px; font-weight: 300; line-height: 1.5; letter-spacing: -0.45px;
+                                        }
+                                    }
+                                    
+                                  
+                                }
+                            }
+        
+                            &.wrap_02 {
+                                margin: 80px 0 0 220px;
+                                .swiper-container {
+                                    .swiper-wrapper {
+                                        .swiper-slide {
+                                            > figure {
+                                                img {}
+                                                .text_wrap {
+                                                    display: flex;
+                                                    margin-top: 45px;
+                                                    .wrap_01 {
+                                                        .text_01 {
+                                                            position: relative;
+                                                            font-size: 16px; font-weight: 300;   letter-spacing: 0.8px; line-height: normal;
+                                                            // .slide_bar {
+                                                            //     @include absolute-y(0, 50%)
+                                                            //     display: block;
+                                                            //     width: 395px; height: 1px; 
+                                                            //     background: #444;
+                                                            // }
+                                                        }
+                                                    }
+                                                    .wrap_02 {
+                                                        width: 395px;
+                                                        margin-left: 75px;
+                                                        > span {
+                                                            display: block;
+                                                            &.slide_bar {
+                                                                display: block;
+                                                                margin-top: 9px;
+                                                                height: 1px;
+                                                                background: #444;
+                                                            }
+                                                            &.text_01 {
+                                                                margin-top: 32px;
+                                                                font-size: 3rem; font-weight: 400; letter-spacing: -0.75px; line-height: normal;
+                                                            }
+                                                            &.text_02 {
+                                                                @include font-p();
+                                                                @include fc-b6();
+                                                                margin-top: 12px;
+                                                                font-size: 16px; font-weight: 300; line-height: 1.5; letter-spacing: -0.4px;
+                                                            }
+                                                        }
+                                                        
+                                                    }
+                                                    
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }   
+                    }
+        
+                }
+            }
+
+            
+            &.recruit {
+                .sub_section {
+        
+                    &.sub_section_01 {
+                        position: relative;
+                        height: 100vh; width: 100%;
+                        background: url('../images/recruit/mv.png') no-repeat center/cover;
+                        .text_wrap {
+                            @include fixed-layout();
+                            width: 100%; height: 100%;
+                            display: flex; justify-content: center;  flex-direction: column;
+                            
+                            .text_01 {
+                                font-size: 7.5rem ; font-weight: 300; line-height: 1.07; letter-spacing: normal;
+                            }
+                            .text_02 {
+                                margin-top: 35px;
+                                font-size: 13px; line-height: 1.85; letter-spacing: -0.33px;
+                                .ico_arrow_02 {
+                                    margin-left: 35px
+                                }
+                            }
+                        }
+                    }
+        
+                    &.sub_section_02 {
+                        margin-top: 160px;
+                        .content_wrap {
+                            @include fixed-layout();
+                            &.wrap_01 {
+                                > figure {
+                                    display: flex;
+                                    img {}
+                                    > figcaption {
+                                        margin-left: 145px;
+                                        >span {
+                                            display: block;
+                                            &.text_01 {
+                                                @include font-p();
+                                                font-size: 4rem; font-weight: 300; line-height: 1.25; letter-spacing: -2px;
+                                            }
+                                            &.text_02 {
+                                                @include font-p();
+                                                margin-top: 42px;
+                                                font-size: 18px; font-weight: 300; line-height: 1.5; letter-spacing: -0.45px;
+                                            }
+                                        }
+                                        .link_wrap {
+                                            margin-top: 160px;
+                                            font-size: 16px; line-height: normal; letter-spacing: -0.4px;
+                                            > a {
+                                                @include fc-b6();
+                                                display: block;
+                                                margin-top: 20px;
+                                                &:first-child {
+                                                    margin-top: 0;
+                                                }
+                                                strong {
+                                                    margin-bottom: 6px;
+                                                    color: #fff;
+                                                    display: block;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+                            }
+                        }   
+                    }
+        
+                }
+            }
+
+        }
+    }
+    // ====================================== main ======================================
+
+
+
+    // ====================================== footer ======================================
+    #footer {
+        margin-top: 0;
+        padding: 100px 5%;
+        height: auto;
+
+        .footer_wrap {
+            display: flex; flex-direction: column; flex-wrap: wrap;
+            .footer_left {
+                > ul {
+                    > li {
+                        margin-top: 10px;
+                    }
+                }
+            }
+
+            .footer_center {
+                margin-left: 0;
+                margin-top: 20px;
+                > ul {
+                    > li {
+                        margin-left: 30px;
+                        &:first-child {
+                            margin-left: 0;
+                        }
+                        strong {
+                        }
+                        span {
+                        }
+                    }
+                }
+            }
+
+            .footer_right {
+                margin-left: 0;
+                margin-top: 20px;
+                > ul {
+                    margin-left: 20px;
+                    &:first-child {
+                        margin-left: 0;
+                    }
+                    li {
+                        margin-top: 12px;
+                        &:first-child {
+                            margin-top: 0;
+                        }
+                    }
+                }
+            }
+        }
+    }
+    // ====================================== footer ======================================
+    
 
 }
 
-
-
-// ====================================1440====================================
-
-@media (max-width: 1440px) {}
+}
 
 
 
@@ -249,2752 +1103,560 @@
         }
     }
 
-    // ==========================header==========================
-    #header {
-        @include header-height-1100();
+    
+    body {
+        
 
-        &.active {}
-
-        a {}
-
-        .depth_01 {}
-
-        >.header_wrap {
-            padding: 0 2.5%;
-
-            &:hover {
-                background: transparent;
-            }
-
-            // logo
-            .header_left {
-                margin-top: 0;
-
-                a {}
-            }
-
-            // center_menu
-            .header_center {
-                opacity: 0;
-                visibility: hidden;
-            }
-
-            // header_right 
-            .header_right {
-
-                .header_lang {
-                    display: none;
-
-                    &.active {
-                        display: block;
+        // ====================================== main ======================================
+        main {
+            &.main_wrap {
+                .main_section {
+                    &:not(:first-child) {
+                        
                     }
-
-                    .fixed_lang {
-                        .lang_arrow {}
-                    }
-
-                    .depth_lang {
-                        a {
-                            &:hover {}
-                        }
-                    }
-
-                    &:hover .depth_lang {}
-
-                    &:hover .lang_arrow {}
-                }
-
-
-
-                // header_sns
-                .header_sns {
-                    display: none;
-
-                    &.active {
-                        display: block;
-                    }
-
-                    >ul {
-                        margin-left: 10px;
-
-                        >li {
-
-                            a {
-                                img {}
-                            }
-
-                            &:not(:first-child) {}
-
-                            &:hover {}
-                        }
-                    }
-                }
-
-
-                // header_ham
-                .header_ham {
-                    margin-left: 25px;
-
-                    &.active {
-                        span {}
-                    }
-
-                    span {
-                        &:nth-of-type(1) {}
-
-                        &:nth-of-type(2) {}
-
-                        &:nth-of-type(3) {}
-                    }
-                }
-
-
-                &.active {
-                    span:nth-of-type(1) {}
-
-                    span:nth-of-type(2) {}
-
-                    span:nth-of-type(3) {}
-                }
-            }
-
-            &:hover {
-                .header_center {
-                    .depth_01 {
-                        display: none;
-                    }
-
-                    .header_bg {
-                        display: none;
-                    }
-                }
-            }
-
-            // full_header
-            .header_full {
-                &.active {}
-
-                .header_full_wrap {
-                    margin-top: 0;
-                    width: 100%;
-                    height: 100%;
-                    display: flex;
-                    align-items: center;
-                    justify-content: center;
-
-                    a {
-                        &:hover {}
-                    }
-
-                    .header_full_list {
-                        .depth_01 {
-                            width: 100%;
-
-                            >a {
-                                padding-top: 15px;
-                            }
-
-                            &:nth-child(1) {
-                                >a {}
-                            }
-
-                            // depth_02
-                            .depth_02 {
-                                display: none;
-
-                                >li {
-                                    >a {
-                                        padding: 15px 0 0 15px;
+    
+                    &.main_visual_section {
+                        .mv_wrap {
+                            
+                            .mv {
+                                > video {
+                                    source {}
+                                }
+                                &.mv_01 {}
+                                &.mv_02 {}
+                                &.mv_03 {}
+    
+    
+                                // mv text
+                                .mv_text {
+                                    .text_wrap {
+                                        .text_01 {
+                                        }
+                                        .text_link {
+                                        }
+                                        
                                     }
-
-                                    // depth_03
-                                    .depth_03 {
-                                        >li {
-                                            >a {
-                                                padding: 15px 0 0 15px;
-
-                                                &:hover {}
+                                    
+                                }
+                            }
+                        }
+                    }
+    
+                    &.main_section_01 {
+                        .content_wrap {
+                            &.wrap_01 {
+                                padding-top: 80px;
+                                flex-direction: column; flex-wrap: wrap;
+                                .text_wrap {
+                                    
+                                    .text_link {
+                                        justify-content: flex-start;
+                                    }
+                                }
+    
+                                .detail_wrap {
+                                    width: 100%;
+                                    margin-left: 0;
+                                    margin-top: 40px;
+    
+                                    .detail_text {
+                                        .text_01 {
+                                        }
+                                    }
+    
+                                    .detail_img {
+                                        margin-top: 30px;
+                                        justify-content: space-around;
+                                        >figure {
+                                            .img_wrap {
+                                                img {}
                                             }
+                                            figcaption {
+                                                > span {
+                                                    &.text_01 {}
+                                                    &.text_02 {}
+                                                }
+                                            }
+                                        }
+                                        .ico_plus {
+                                            display: none;
                                         }
                                     }
                                 }
                             }
-                        }
-                    }
-                }
-            }
-        }
-
-        &.active {
-            // background: transparent;
-        }
-
-
-    }
-
-    // ==========================main==========================
-    main {
-
-        // ==========================main_index==========================
-        &.main_wrap {
-            .main_section {
-                &:not(:first-child) {}
-
-                &.main_section_01 {
-                    .main_visual_scroll {
-                        margin-left: 5%;
-
-                        .bar_warp {
-                            height: 200px;
-
-                            span {}
-
-                            .bar_background,
-                            .bar_move {}
-
-                            .bar_background {}
-
-                            .bar_move {
-                                .bar_dot {}
-                            }
-                        }
-
-                        .bar_img {}
-                    }
-
-
-                    .mv_wrap {
-
-                        .mv {
-                            &.mv_01 {}
-
-                            &.mv_02 {}
-
-                            &.mv_03 {}
-
-                            .mv_img {}
-
-                            .mv_text {
-                                span {}
-
-                                .text_01 {
-                                    i {}
-
-                                    strong {}
-                                }
-
-                                .text_02 {
-                                    margin-top: 15px;
-                                }
-
-                                .view_more {
-                                    margin-top: 40px;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                &.main_section_02,
-                &.main_section_03 {
-                    padding: 0 5%;
-
-                    .content_wrap {
-                        .content_title {
-                            padding-top: 75px;
-
-                            .text_01 {
-                                strong {}
-                            }
-
-                            .text_02 {
-                                margin-top: 10px;
-                            }
-
-                            .text_03 {
-                                margin-top: 30px;
-
-                                strong {}
-                            }
-                        }
-                    }
-
-                    .content_detail.main_about {
-                        margin-top: 70px;
-
-                        figure {
-                            width: 50%;
-                            max-width: 350px;
-                            max-height: 350px;
-
-                            img {
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                            }
-
-                            figcaption {
-                                padding: 20px;
-
-                            }
-
-                            &:nth-child(odd) {
-                                transform: translateY(-20px);
-                            }
-
-                            &:hover {
-                                img {}
-                            }
-                        }
-
-                    }
-                }
-
-                &.main_section_03 {
-                    margin-top: 75px;
-
-                    .content_wrap {
-                        .main_product {
-                            .main_product_wrap {
-
-                                // swiper-button
-                                .swiper-button-next,
-                                .swiper-button-prev {
-                                    width: 30px;
-                                    height: 30px;
-                                    top: -10px;
-                                    display: none;
-                                }
-
-                                .swiper-button-next {
-                                    right: 0;
-                                }
-
-                                .swiper-button-prev {
-                                    left: 90%;
-                                }
-
-                                .swiper_wrap {
-                                    margin-top: 70px;
-
-                                    .main_product_slide_01 {
-                                        .swiper-wrapper {
-                                            .product_01 {
-                                                &:hover {
-                                                    i {
-                                                        img {
-                                                            opacity: .5;
+    
+                            &.wrap_02 {
+                                padding-top: 80px;
+                                .img_wrap {
+                                    &.wrap_01 {
+                                        > div {
+                                            >figure {
+                                                width: 100%;
+                                                display: flex; align-items: center;
+                                                >img {
+                                                    width: 50%;
+                                                }
+                                                >figcaption {
+                                                    width: 50%;
+                                                    position: static;
+                                                    .text_wrap {
+                                                        padding: 0 10px;
+                                                        > span {
+                                                            display: block;
+                                                            &.text_01{}
+                                                            &.text_02{}
+                                                        }
+                                                        
+                                                    }
+                                                }
+    
+                                                &.img_01 {}
+                                                &.img_02 {
+                                                    margin-top: 40px;
+                                                    img {
+                                                        order: 2;
+                                                    }
+                                                    figcaption {
+                                                        .text_wrap {
+                                                            text-align: right;
                                                         }
                                                     }
                                                 }
-
-                                                img {}
-
-                                                .product_text_wrap {
-                                                    margin-top: 10px;
-
-                                                    >p {
-                                                        .text_01 {}
-
-                                                        .text_02 {}
-                                                    }
-
-                                                    i {
-                                                        img {}
-                                                    }
-                                                }
                                             }
                                         }
-                                    }
-                                }
-
-
-                                .more_text_wrap {
-                                    margin-top: 60px;
-                                    padding-bottom: 75px;
-
-                                    .view_more {}
-                                }
-                            }
-                        }
-                    }
-
-                }
-
-                &.main_section_04 {
-                    background: #deeff8;
-                    padding: 0 5%;
-
-                    .content_wrap {
-                        padding: 75px 0;
-
-                        .swiper-container.main_product_slide_02 {
-
-                            .swiper-wrapper {
-                                .swiper-slide {
-                                    justify-content: space-between;
-
-                                    .text_wrap {
-                                        width: 50%;
-
-                                        .text_01 {}
-
-                                        .text_02 {
-                                            margin-top: 20px;
-                                        }
-                                    }
-
-                                    img {
-                                        width: 50%;
-                                        margin-left: 0;
+                                        
                                     }
                                 }
                             }
-
-
-                            .swiper_navi {
-                                .swiper_navi_wrap {
-
-                                    .swiper-button-prev,
-                                    .swiper-button-next {
-                                        width: 30px;
-                                        height: 30px;
-                                    }
-
-                                    .swiper-button-prev {}
-
-                                    .swiper-button-next {}
-
-                                    .product_pagination_02 {
-                                        .swiper-pagination-current {}
-
-                                        .swiper-pagination-total {}
-                                    }
-                                }
-
-                            }
-
-                        }
-                    }
-                }
-
-
-                &.main_section_05 {
-                    margin-top: 75px;
-                    padding: 0 5%;
-
-                    .content_wrap {
-
-                        // display: flex;
-                        // flex-direction: column;
-                        .swiper-container {
-                            overflow: hidden;
-                            // order: 2;
-                            margin-top: 70px;
-
-                            .swiper-wrapper {
-                                .swiper-slide {
-                                    img {
-                                        // max-width: 550px;
-                                        max-height: 500px;
-                                        // width: 100%;
-                                        margin-left: 30px;
-                                        width: 50%;
-                                    }
-
-                                    figcaption {
-                                        width: 50%;
-                                        text-align: right;
-
-                                        span {}
-
-                                        .text_01 {}
-
-                                        .text_02 {
-                                            margin-top: 20px;
-                                            font-size: 14px;
-
-                                            .main_event_date {}
-                                        }
-
-                                        .text_04.view_more {
-                                            margin-top: 30px;
-
-                                            &::after {
-                                                left: auto;
-                                                right: 0;
-                                            }
-                                        }
-                                    }
-
-                                    &.swiper-slide-active {}
-                                }
-                            }
-                        }
-
-                        .swiper_navi {
-                            text-align: center;
-                            // position: relative;
-                            // order: 1;
-                            // text-align: center;
-                            transform: translateX(0);
-                            position: static;
-
-                            .swiper_navi_wrap {
-                                .text_wrap {
-                                    >p {
-                                        .text_01 {
-                                            strong {}
-                                        }
-
-                                        .text_02 {
-                                            strong {}
-                                        }
-                                    }
-                                }
-
-                                .swiper-button-next,
-                                .swiper-button-prev {
-                                    display: none !important;
-                                    width: 15px;
-                                    height: 20px;
-
-                                    &:hover {}
-                                }
-
-                                .swiper-button-prev {}
-
-                                .swiper-button-next {}
-                            }
-                        }
-                    }
-                }
-
-
-                &.main_section_06 {
-                    margin-top: 75px;
-
-                    .content_wrap {
-                        >.contact_wrap {
-                            flex-direction: column;
-
-                            >div {}
-
-                            .contact_img {
-                                width: 100%;
-                                height: 200px;
-
-                                img {}
-                            }
-
-                            .contact_box {
-                                width: 100%;
-                                padding: 50px 40px;
-
-                                .box_wrap {
-                                    max-width: 100%;
-
-                                    .text_wrap {
-                                        margin-left: 0;
-                                        text-align: center;
-
-                                        .text_01 {
-                                            strong {}
-                                        }
-
-                                        .text_02 {
-                                            margin-top: 20px;
-                                        }
-                                    }
-
-                                    .form_box {
-                                        margin-top: 35px;
-
-                                        .content {
-                                            label {}
-
-                                            input,
-                                            .inq_box {}
-                                        }
-
-                                        .content.full {}
-
-                                        .box_01 {
-                                            .content:nth-child(even) {}
-                                        }
-
-                                        .box_02 {
-                                            margin-top: 10px;
-
-                                            .inq_box {
-                                                height: 100px;
-                                            }
-                                        }
-
-                                        .box_submit {
-                                            margin-top: 10px;
-                                            text-align: right;
-
-                                            .btn_submit {
-                                                padding: 20px 35px;
-
-                                                &:hover {}
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-
-            }
-        }
-
-        // ==========================main_index==========================
-
-
-        // ==========================sub_page==========================
-        // sub_page default (main visual / sub menu bar)
-        &.sub {
-            &.about .visual {}
-
-            &.product .visual {}
-
-            &.shop .visual {}
-
-            &.community .visual {}
-
-            &.contact .visual {}
-
-            .sub_section.visual {
-                height: 350px;
-
-                .visual_img {
-                    .visual_title {}
-                }
-
-                .sub_depth {
-                    justify-content: center;
-                    height: 50px;
-                    transform: translateY(-25px);
-
-                    a {}
-
-                    .sub_ico {
-                        padding-left: 15px;
-
-                        img {}
-
-                        &::after {
-                            @include sub-menu-bar(15px, 15px);
-                        }
-
-                        &:hover {
-                            img {
-                                padding-bottom: 5px;
-                            }
-                        }
-                    }
-
-                    .sub_nav {
-                        .depth_01 {
-                            padding-left: 30px;
-
-                            .depth_01_list {
-                                display: flex;
-
-                                >a {
-                                    padding-right: 20px;
-                                }
-
-                                >i {
-                                    img {}
-                                }
-                            }
-
-                            &::after {
-                                @include sub-menu-bar(15px, 30px);
-                            }
-                        }
-
-
-                        .depth_02 {
-                            .depth_02_list {
-                                a {
-
-                                    // padding: 20px 0 0 30px;
-                                    &:hover {}
-                                }
-
-                                &:last-child {}
-                            }
-                        }
-
-                        // sub_nav hover,active
-                        &:hover {
-                            .depth_01 {
-                                i {
-                                    img {}
-                                }
-                            }
-
-                            .depth_02 {}
-                        }
-                    }
-
-                    .sub_nav_02 {}
-                }
-            }
-
-            .sub_page_layout {
-                padding: 0 5%;
-
-                &.sub_section_01 {
-                    .sub_page_title {
-                        margin-top: 75px;
-                        font-weight: normal;
-
-                        >span {}
-
-                        .text_01 {
-                            margin-top: 75px;
-
-                            img {}
-                        }
-
-                        .sub_title {
-                            // margin-top: 30px;
-                        }
-                    }
-
-                    >article.content:last-child {
-                        @include margin-bottom-1100();
-                    }
-                }
-            }
-
-
-
-        }
-
-        // sub_page default (main visual / sub menu bar)
-
-
-        // about_company ============================================
-        &.about.company {
-            .sub_section_01 {
-                .content_01.company_slide {
-                    .swiper-wrapper {
-                        .swiper-slide {
-                            img {
-                            }
-                            figcaption {
-                                background: rgba($color: #000000, $alpha: .6);
-                                padding: 20px;
-                                right: 0; top: 50%; 
-                                width: 100%; height: 100%;
-                                display: flex;
-                                align-items: center;
-                                justify-content: center;
-                                flex-direction: column;
-                                span.text_01 {
-                                    text-align: center;
-                                    color: #fff !important;
-                                }
-                                span.text_02 {
-                                    text-align: center;
-                                    color: #fff !important;
-                                }
-                            }
-                        }
-                    }
-                    .swiper-pagination {
-                        margin-bottom: 10px;
-                        .swiper-pagination-bullet {}
-                        .swiper-pagination-bullet-active {}
-                    }
-                }
-
-                .content_02 {
-                    .content_wrap {
-                        .content_info {
-                            &:not(first-child) {
-                                margin-top: 60px;
-                            }
-                            &.info_01 {}
-                            img {
-                                order: 1;
-                                max-width: 250px;
-                            }
-                            figcaption {
-                                > span {
-                                    &.text_01 {
-                                        .point_num {
-                                        }
-                                    }
-                                    &.text_02 {
-                                        font-size: 16px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }       
-
-            .sub_section_02, .sub_section_03, .sub_section_04 {
-                margin-top: 50px; 
-                .content_01 {
-                    .content_wrap {
-                        .section_title {
-                            > span {
-                                i {
-                                }
-                            }
-                            .text_01 {
-                            }
-                            .text_02 {
-                                font-size: 16px;
-                            }
-                        }
-                        .section_content {
-                            margin-top: 60px;
-                            .content_wrap {
-                                .bar {
-                                } 
-                                .history_img {
-                                    img {
-                                        max-width: 100%;
-                                    }
-                                }
-
-
-                            }
-                        }
-                    }
-                }
-
-            }
-            .sub_section_03 {
-                margin-top: 0 !important;
-                .content_02 {
-                    margin-top: 50px;
-                    .content_wrap {
-                        figure {
-                            width: 30%;
-                            &:last-child {
-                            }
-                            img {}
-                            figcaption {
-                                font-size: 16px;
-                                margin-top: 10px;
-                            }
-                        }
-                    }   
-                }
-            }
-            .sub_section_04 {
-                margin: 50px 0 75px 0;
-                padding: 0 5%;
-                .content_01 {
-                    .content_wrap {
-                        .section_table {
-                            .table_wrap {
-                                margin-top: 20px;
-                                table {
-                                    tbody {
-                                        tr {
-                                            &:nth-child(even) {
-                                            }
-                                            font-size: 14px;
-                                            th {
-                                            }
-                                            td {
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }   
-                }
-            }
-        }
-
-        // about_ceo ============================================
-        &.about.ceo {
-            .sub_section_01 {
-
-                .content_01 {
-                    @include margin-top-1100();
-
-                    >figure {
-                        height: 200px;
-
-                        img {}
-
-                        figcaption {
-                            margin-left: 30px;
-
-                            span {}
-
-                            .text_01 {}
-
-                            .text_02 {}
-
-                            .text_03 {}
-                        }
-                    }
-                }
-
-                .content_02 {
-                    .text_wrap {
-                        font-size: 16px;
-
-                        .text_01 {}
-                    }
-                }
-            }
-        }
-
-        // about_history ============================================
-        &.about.history {
-            .sub_section_01 {
-                .history_line {
-                    .history_wrap {
-
-                        // margin-top: 50px;
-                        .after_bar,
-                        .before_bar {
-                            left: 20px;
-                            top: 0;
-                            transform: translateX(0);
-                        }
-
-                        .after_bar {}
-
-                        .before_bar {}
-
-
-
-                        .history_ul {
-                            padding-left: 50px;
-                            padding-bottom: 40px;
-                            flex-direction: column;
-
-                            &.first::after {
-                                @include absolute-left(0, 0);
-                            }
-
-                            &:last-child::before {
-                                left: 20px;
-                            }
-
-                            &:first-child {
-                                padding-top: 40px;
-                            }
-
-                            >li {
-                                width: 100%;
-                                padding: 0 20px;
-
-                                &.history_year {
-                                    order: 0 !important;
-                                    padding: 0 !important;
-                                    margin: 0 !important;
-
-                                    >p {
-                                        padding: 0 !important;
-                                        margin: 0 !important;
-                                        font-size: 4rem;
-                                        text-align: left;
-                                    }
-                                }
-
-                                &.history_text_wrap {
-                                    padding: 0 !important;
-                                    margin: 0 !important;
-                                    padding-left: 0;
-
-                                    .history_list {
-                                        padding: 0 !important;
-                                        margin: 0 !important;
-                                        padding-right: 0;
-                                        padding-bottom: 10px !important;
-                                        display: flex;
-                                        justify-content: flex-start !important;
-                                        align-items: baseline !important;
-
-                                        .text_01 {
-                                            padding: 0 !important;
-                                            margin: 0 !important;
-                                            font-size: 16px;
-                                        }
-
-                                        .text_02 {
-                                            padding: 0 !important;
-                                            margin: 0 !important;
-                                            order: 1 !important;
-                                            margin-left: 5px !important;
-                                            font-size: 16px;
-                                            line-height: 1.5;
-                                            text-align: left !important;
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        // about_certifi ============================================
-        &.about.certifi {
-            .sub_section_01 {
-                .content_01 {
-
-                    // margin-top: 50px;
-                    .content_wrap {
-                        .certifi_list {
-                            width: 33%;
-                            margin-bottom: 30px;
-
-                            img {}
-
-                            figcaption {
-                                font-size: 16px;
-
-                                .text_01 {
-                                    font-size: 14px;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .content_02 {
-                    .btn_wrap {
-                        font-size: 14px;
-
-                        .btn_ico {
-                            &:first-child {
-                                margin-right: 30px;
-                            }
-
-                            &:last-child {
-                                margin-left: 30px;
-                            }
-                        }
-
-                        .btn_num {}
-
-
-
-                        .btn_num {
-
-                            &.active,
-                            &:hover {}
-                        }
-                    }
-                }
-            }
-        }
-
-        // about_direction ============================================
-        &.about.direction {
-            .sub_section_01 {
-                .content_01 {
-                    .content_wrap {
-                        display: flex;
-
-                        .content_list {
-                            &:last-child {}
-
-                            width: 50%;
-                            border-right: none;
-                            margin-bottom: 20px;
-
-                            >a {
-                                >div {
-                                    img {}
-                                }
-
-                                figcaption {
-                                    span {}
-
-                                    .text_01 {}
-
-                                    .text_02 {
-                                        margin-top: 10px;
-                                    }
-
-                                    .text_02,
-                                    .text_03 {
-                                        font-size: 16px;
-                                    }
-                                }
-
-                                // hover, active
-                                &:hover {
-                                    span {}
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .content_02 {
-                    margin-top: 60px;
-                }
-            }
-        }
-
-        // shop ============================================
-        &.shop {
-            .sub_section_01 {
-                .content_01 {
-                    margin-top: 50px;
-
-                    .content_wrap {
-                        .content_list {
-                            margin-bottom: 20px;
-
-                            >a {
-                                &:hover {
-                                    .text_01 {}
-                                }
-
-                                >div {
-                                    img {
-                                        max-width: 140px;
-                                    }
-                                }
-
-                                figcaption {
-                                    .text_01 {
-                                        font-size: 16px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        // product ============================================
-        &.product {
-            .sub_section_01 {
-                .content_01 {
-                    .content_wrap {
-                        .product_navi {
-                            >ul {
-                                justify-content: center;
-                                flex-wrap: wrap;
-
-                                li {
-                                    margin-bottom: 10px;
-                                    display: flex;
-                                    align-items: center;
-                                    justify-content: center;
-                                    height: 100%;
-
-                                    &:not(:last-child) {}
-
-                                    a {
-                                        padding: 10px 5px;
-                                        font-size: 14px;
-                                    }
-
-                                    // active,hover
-                                    &.active {
-                                        a {}
-                                    }
-                                }
-                            }
-                        }
-
-                        .product_wrap {
-                            .product_list {
-                                flex-wrap: wrap;
-
-                                .product_item {
-                                    margin-bottom: 30px;
-                                    max-width: 100%;
-                                    width: calc(33% - 10px);
-                                    margin-right: 10px;
-                                    &:nth-child(3n) {
-                                        margin: 0;
-                                    }
-                                    >a {
-                                        figure {
-                                            img {
-                                                max-width: 100%;
-                                            }
-
-                                            figcaption {
-                                                padding: 10px 0 0 10px;
-
-                                                span {}
-
-                                                .text_01 {}
-
-                                                .text_02 {
-                                                    font-size: 14px;
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-                                &.active {}
-                            }
-
-                            // active, hover 
-
-                        }
-                    }
-                }
-
-                .content_02 {}
-            }
-        }
-
-        // product_more ============================================
-        &.product_more {
-            .sub_section_01 {
-                .content_01 {
-                    .content_wrap {}
-                }
-
-                .content_02 {
-                    margin-top: 50px;
-
-                    .product_more {
-                        .product_wrap {
-                            flex-wrap: wrap;
-
-                            .product_img {
-                                .product_thum {
-                                    img {
-                                        // max-width: 550px;
-                                        // max-height: 550px;
-                                    }
-                                }
-
-                                .product_thum_sub {
-                                    margin-top: 10px;
-
-                                    img {
-                                        &:hover {}
-                                    }
-                                }
-                            }
-
-                            .product_info {
-                                width: 50%;
-                                padding: 10px 25px;
-
-                                >span {}
-
-                                .text_01 {}
-
-                                .text_02 {
-                                    margin-top: 20px;
-                                    font-size: 14px;
-                                }
-
-                                .btn {
-                                    margin-top: 30px;
-                                    padding: 20px 45px;
-
-                                    &:hover {}
-                                }
-                            }
-                        }
-
-                    }
-                }
-
-                .content_03 {
-                    background: #f7f7f7;
-                    margin-top: 30px;
-
-                    .content_wrap {
-                        .product_table_wrap {
-                            padding: 4rem 9rem;
-
-                            .product_table_title {}
-
-                            .product_table {
-                                margin-top: 20px;
-
-                                tbody {
-                                    >tr {
-                                        font-size: 14px;
-
-                                        th {
-                                            width: 20%;
-                                        }
-
-                                        td {}
-                                    }
-
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        // contact.page_01 ============================================
-        &.contact.page_01 {
-            .sub_section_01 {
-                .content_01 {
-                    .content_wrap {
-                        .box_wrap {
-                            label {
-                                font-size: 14px;
-                                letter-spacing: -0.16px;
-                                padding-left: 9px;
-                            }
-
-                            input,
-                            textarea {
-                            }
-
-                            input::placeholder {}
-                        }
-
-                        .contact_01 {
-                            .box_wrap {
-                                width: 100%;
-
-                                &:last-child  {
-                                    input {
-                                        margin-right: 0;
-                                    }
-                                }
-
-                                input {
-                                    margin-right: 10px;
-                                }
-                                
-                            }
-                        }
-
-                        .contact_02 {
-
-                            textarea {
-                            }
-                        }
-
-                        .contact_03 {
-
-                            .box_wrap {
-
-                                input {
-                                    font-size: 16px;
-                                    &:hover {
-                                    }
-                                }
-                            }
-
-                        }
-
-                    }
-                }
-            }
-
-            .sub_section_02 {
-                background: #f4f4f4;
-
-                .content {
-                    padding: 0 5%;
-                }
-
-                .content_01 {
-                    padding-top: 40px;
-
-                    .content_wrap {
-                        display: flex;
-                            .content_list {
-                                &:last-child {}
     
-                                width: 50%;
-                                border-right: none;
-                                margin-bottom: 20px;
     
-                                >a {
-                                    >div {
-                                        img {}
-                                    }
-    
-                                    figcaption {
-                                        span {}
-    
-                                        .text_01 {}
-    
-                                        .text_02 {
-                                            margin-top: 10px;
-                                        }
-    
-                                        .text_02,
-                                        .text_03 {
-                                            font-size: 16px;
-                                        }
-                                    }
-    
-                                    // hover, active
-                                    &:hover {
-                                        span {}
-                                    }
-                                }
-                            }
-                    }
-                }
-
-                .content_02 {
-                    margin-top: 60px;
-                    padding-bottom: 100px;
-                }
-            }
-        }
-
-        // community.sns ============================================
-        &.community.sns {
-            .sub_section_01 {
-                .content_01 {
-                    .content_wrap {
-                        .sns_wrap {
-                            &.sns_01 {}
-
-                            &.sns_02 {}
-
                         }
                     }
-                }
-            }
-
-            .sub_section_02 {
-                padding: 0 5% 50px 5%;
-
-                .content_01 {
-                }
-            }
-
-            .sns_info {
-                img {
-                    max-width: 100px;
-                    max-height: 100px;
-                }
-
-                figcaption {
-                    margin-left: 20px;
-                    >span {
-                    }
-
-                    .text_01 {
-                    }
-
-                    .text_02 {
-                    }
-                }
-            }
-
-            .sns_detail {
-                >a {
-                }
-
-                figure {
-                    max-width: 200px;
-                    max-height: 200px;
-                    width: 100%;
-                    margin-bottom: 20px;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-            }
-        }
-
-
-        // ==========================sub_page==========================
-
-
-
-
-    }
-
-    // ==========================main==========================
-
-
-    // ==========================footer==========================
-    #footer {
-        .footer_wrap {
-            padding: 40px 5%;
-
-            .content_01 {
-                .link_wrap {
-                    .footer_link {
-                        &:not(:first-child) {}
-
-                        a {}
-                    }
-                }
-
-                .info_wrap {
-                    margin-top: 15px;
-
-                    .footer_info {
-                        >a {
-                            &:hover {}
-                        }
-
-                        &.direction {}
-
-                        &.copyright {}
-                    }
-                }
-            }
-        }
-    }
-
-}
-
-
-
-// ====================================900====================================
-@media (max-width: 900px) {
-
-    main {
-
-        // about_company ============================================
-        &.about.company {
-            .sub_section_01 {
-                .content_01.company_slide {
-                    .swiper-wrapper {
-                        .swiper-slide {
-                            img {
-                            }
-                            figcaption {
-                                span.text_01 {
-                                }
-                                span.text_02 {
-                                }
-                            }
-                        }
-                    }
-                    .swiper-pagination {
-                        .swiper-pagination-bullet {}
-                        .swiper-pagination-bullet-active {}
-                    }
-                }
-
-                .content_02 {
-                    .content_wrap {
-                        .content_info {
-                            position: relative;
-                            &:not(first-child) {
-                                margin-top: 70px;
-                            }
-                            &.info_01 {}
-                            img {
-                                display: none;
-                                // position: absolute;
-                                // right: 0; top: 50%;
-                                // transform: translateY(-50%);
-                                // opacity: .25;
-                            }
-                            figcaption {
-                                width: 100%;
-                                > span {
-                                    &.text_01 {
-                                        .point_num {
-                                        }
-                                    }
-                                    &.text_02 {
-                                        font-size: 16px;
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-            }       
-
-            .sub_section_02, .sub_section_03, .sub_section_04 {
-                margin-top: 50px; 
-                .content_01 {
-                    .content_wrap {
-                        .section_title {
-                            > span {
-                                i {
-                                }
-                            }
-                            .text_01 {
-                            }
-                            .text_02 {
-                                font-size: 16px;
-                            }
-                        }
-                        .section_content {
-                            margin-top: 60px;
-                            .content_wrap {
-                                .bar {
-                                } 
-                                .history_img {
-                                    img {
-                                        max-width: 100%;
-                                        &.pc_ver {
-                                            display: none;
-                                        }
-                                        &.mo_ver {
-                                            display: block;
-                                        }
-                                    }
-                                }
-
-
-                            }
-                        }
-                    }
-                }
-
-            }
-            .sub_section_03 {
-                .content_01 {
-                    .section_content {
+    
+                    &.main_section_02 {
+                        margin-top: 80px;
                         .content_wrap {
-                            .history_img {
-                                img {
-                                    max-width: 400px !important;
-                                    width: 100%;
+                            &.wrap_01 {
+                                .text_wrap {
+                                    .text_01 {}
+                                    .text_link {
+                                    }
+                                }
+                            }
+    
+                            &.wrap_02 {
+                                margin: 40px 0 0 0;
+                                .swiper-container {
+                                    .swiper-wrapper {
+                                        .swiper-slide {
+                                            > figure {
+                                                img {}
+                                                .text_wrap {
+                                                    display: flex;
+                                                    margin-top: 20px;
+                                                    .wrap_01 {
+                                                        .text_01 {
+                                                        }
+                                                    }
+                                                    .wrap_02 {
+                                                        width: 100%;
+                                                        margin-left: 10px;
+                                                        > span {
+                                                            &.slide_bar {
+                                                                margin-top: 5px;
+                                                            }
+                                                            &.text_01 {
+                                                                margin-top: 20px;
+                                                            }
+                                                            &.text_02 {
+                                                                margin-top: 8px;
+                                                            }
+                                                        }
+                                                        
+                                                    }
+                                                    
+                                                }
+                                            }
+                                        }
+                                    }
                                 }
                             }
                         }   
                     }
-                }
-                .content_02 {
-                    margin-top: 50px;
-                    .content_wrap {
-                        flex-wrap: wrap;
-                        figure {
-                            width: 100%;
-                            margin-top: 30px;
-                            border: none;
-                            &:first-child {
-                                margin-top: 0;
+    
+                    &.main_section_03 {
+                        margin-top: 80px;
+                        .content_wrap {
+                            flex-direction: column;
+                            .text_wrap {
+                                &.wrap_01 {
+                                }
                             }
-                            &:last-child {
-                            }
-                            img {
-                                max-width: 75px;
-                            }
-                            figcaption {
-                                font-size: 16px;
-                                margin-top: 10px;
-                            }
-                        }
-                    
-                    }   
-                }
-            }
-            .sub_section_04 {
-                margin: 50px 0 75px 0;
-                padding: 0 5%;
-                .content_01 {
-                    .content_wrap {
-                        .section_table {
-                            .table_wrap {
-                                margin-top: 20px;
-                                table {
-                                    tbody {
-                                        tr {
-                                            &:nth-child(even) {
-                                            }
-                                            font-size: 14px;
-                                            th {
-                                            }
-                                            td {
-                                            }
-                                        }
+                            .logo_wrap {
+                                &.wrap_01 {
+                                    a {
+                                        width: 25%; text-align: center;
+                                        margin-left: 0;
                                     }
                                 }
                             }
                         }
-                    }   
+                    }
+    
                 }
             }
         }
+        // ====================================== main ======================================
+
+            
+        // ====================================== footer ======================================
+        #footer {
+            padding: 75px 5%;
+            .footer_wrap {
+                .footer_left {
+                    > ul {
+                        > li {
+                            margin-top: 5px;
+                        }
+                    }
+                }
+
+                .footer_center {
+                    > ul {
+                        > li {
+                            margin-left: 30px;
+                            strong {
+                            }
+                            span {
+                            }
+                        }
+                    }
+                }
+
+                .footer_right {
+                    > ul {
+                        li {
+                            margin-top: 10px;
+                        }
+                    }
+                }
+            }
+        }
+        // ====================================== footer ======================================
     }
+    
 
+    
+
+
+    
 }
-
 
 // ====================================767====================================
 @media (max-width: 767px) {
 
-    .header_center {
-        display: none !important;
-    }
+
+    
+    
+    
+    body {
+        
+        // ====================================== header ======================================
+        header {
+            margin-top: 15px;
 
 
-    // ==========================main==========================
-    main {
+            .header_wrap {
+                .header_left {
+                    width: 125px;
+                }
 
-        // ==========================main_index==========================
-        &.main_wrap {
-            .main_section {
-                &:not(:first-child) {}
-
-                &.main_section_01 {
-                    .main_visual_scroll {
-                        margin-left: 5%;
-
-                        .bar_warp {
-                            height: 200px;
-
-                            span {}
-
-                            .bar_background,
-                            .bar_move {}
-
-                            .bar_background {}
-
-                            .bar_move {
-                                .bar_dot {}
-                            }
-                        }
-
-                        .bar_img {}
+                // center_menu
+                .header_center {
+                    display: none;
+                    >.depth_01 {
                     }
 
+                }
+            }
+        }
+        // ====================================== header ======================================
 
-                    .mv_wrap {
 
-                        .mv {
-                            &.mv_01 {}
+            
+        // ========================================== right_full_menu ==========================================  
+        #full_menu {
+            .full_menu_wrap {
+                #full_menu_bar {
+                    top: 10%;
+                }
 
-                            &.mv_02 {}
-
-                            &.mv_03 {}
-
-                            .mv_img {}
-
-                            .mv_text {
-                                span {}
-
-                                .text_01 {
-                                    i {}
-
-                                    strong {}
+                #full_menu_view {
+                    .view_wrap {
+                        flex-direction: column;
+                        .content {
+                            &.content_01 {
+                                width: 100%; height: 100%;
+                                .content_wrap {
+                                    > li {
+                                        margin-top: 10px;
+                                        &:first-child {}
+                                        > a{
+                                            i {}
+                                            span {
+                                                // font-size: 6rem;
+                                            }
+                                        }
+                                    }
                                 }
+                            }
+                            &.content_02 {
+                                display: none;
+                                .content_wrap {
 
-                                .text_02 {
-                                    margin-top: 15px;
-                                }
+                                    .contact_title {
+                                    }
 
-                                .view_more {
-                                    margin-top: 40px;
+                                    .contact_info {
+                                        > li {
+                                            strong {}  
+                                            a {
+                                            }
+                                        }
+                                    }
+
+                                    .contact_detail {
+                                        > li {
+                                            strong {}
+                                            span {}
+                                        }
+                                    }
                                 }
                             }
                         }
                     }
                 }
+            }
+        }
+        // ========================================== right_full_menu ==========================================  
 
-                &.main_section_02,
-                &.main_section_03 {
-                    padding: 0 5%;
 
-                    .content_wrap {
-                        .content_title {
-                            padding-top: 75px;
-
-                            .text_01 {
-                                strong {}
-                            }
-
-                            .text_02 {
-                                margin-top: 10px;
-                            }
-
-                            .text_03 {
-                                margin-top: 30px;
-
-                                strong {}
+        // ====================================== main ======================================
+        main {
+            &.main_wrap {
+                .main_section {
+                    &:not(:first-child) {
+                        
+                    }
+    
+                    &.main_visual_section {
+                        .mv_wrap {
+                            
+                            .mv {
+                                > video {
+                                    source {}
+                                }
+                                &.mv_01 {}
+                                &.mv_02 {}
+                                &.mv_03 {}
+    
+    
+                                // mv text
+                                .mv_text {
+                                    .text_wrap {
+                                        .text_01 {
+                                        }
+                                        .text_link {
+                                        }
+                                        
+                                    }
+                                    
+                                }
                             }
                         }
                     }
-
-                    .content_detail.main_about {
-                        margin-top: 70px;
-
-                        figure {
-                            width: 50%;
-                            max-width: 350px;
-                            max-height: 350px;
-
-                            img {
-                                width: 100%;
-                                height: 100%;
-                                object-fit: cover;
-                            }
-
-                            figcaption {
-                                padding: 20px;
-
-                            }
-
-                            &:nth-child(odd) {
-                                transform: translateY(-20px);
-                            }
-
-                            &:hover {
-                                img {}
-                            }
-                        }
-
-                    }
-                }
-
-                &.main_section_03 {
-                    margin-top: 75px;
-
-                    .content_wrap {
-                        .main_product {
-                            .main_product_wrap {
-
-                                // swiper-button
-                                .swiper-button-next,
-                                .swiper-button-prev {
-                                    width: 30px;
-                                    height: 30px;
-                                    top: -10px;
-                                    display: none;
+    
+                    &.main_section_01 {
+                        .content_wrap {
+                            &.wrap_01 {
+                                .text_wrap {
+                                    .text_link {
+                                    }
                                 }
-
-                                .swiper-button-next {
-                                    right: 0;
+    
+                                .detail_wrap {
+                                    .detail_text {
+                                        .text_01 {
+                                        }
+                                    }
+    
+                                    .detail_img {
+                                        >figure {
+                                            .img_wrap {
+                                                img {}
+                                            }
+                                            figcaption {
+                                                > span {
+                                                    &.text_01 {}
+                                                    &.text_02 {}
+                                                }
+                                            }
+                                        }
+                                        .ico_plus {
+                                        }
+                                    }
                                 }
-
-                                .swiper-button-prev {
-                                    left: 90%;
-                                }
-
-                                .swiper_wrap {
-                                    margin-top: 70px;
-
-                                    .main_product_slide_01 {
-                                        .swiper-wrapper {
-                                            .product_01 {
-                                                &:hover {
-                                                    i {
-                                                        img {
-                                                            opacity: .5;
+                            }
+    
+                            &.wrap_02 {
+                                // padding-top: 80px;
+                                .img_wrap {
+                                    &.wrap_01 {
+                                        > div {
+                                            >figure {
+                                                flex-direction: column;
+                                                >img {
+                                                    width: 100%;
+                                                }
+                                                >figcaption {
+                                                    width: 100%;
+                                                    .text_wrap {
+                                                        > span {
+                                                            &.text_01{}
+                                                            &.text_02{}
+                                                        }
+                                                        
+                                                    }
+                                                }
+    
+                                                &.img_01 {}
+                                                &.img_02 {
+                                                    margin-top: 40px;
+                                                    img {
+                                                        order: 0;
+                                                    }
+                                                    figcaption {
+                                                        .text_wrap {
                                                         }
                                                     }
                                                 }
-
+                                            }
+                                        }
+                                        
+                                    }
+                                }
+                            }
+    
+    
+                        }
+                    }
+    
+                    &.main_section_02 {
+                        // margin-top: 80px;
+                        .content_wrap {
+                            &.wrap_01 {
+                                .text_wrap {
+                                    .text_01 {}
+                                    .text_link {
+                                    }
+                                }
+                            }
+    
+                            &.wrap_02 {
+                                .swiper-container {
+                                    .swiper-wrapper {
+                                        .swiper-slide {
+                                            > figure {
                                                 img {}
-
-                                                .product_text_wrap {
-                                                    margin-top: 10px;
-
-                                                    >p {
-                                                        .text_01 {}
-
-                                                        .text_02 {}
+                                                .text_wrap {
+                                                    .wrap_01 {
+                                                        .text_01 {
+                                                        }
                                                     }
-
-                                                    i {
-                                                        img {}
+                                                    .wrap_02 {
+                                                        > span {
+                                                            &.slide_bar {
+                                                            }
+                                                            &.text_01 {
+                                                            }
+                                                            &.text_02 {
+                                                            }
+                                                        }
+                                                        
                                                     }
+                                                    
                                                 }
                                             }
                                         }
                                     }
                                 }
-
-
-                                .more_text_wrap {
-                                    margin-top: 60px;
-                                    padding-bottom: 75px;
-
-                                    .view_more {}
-                                }
                             }
-                        }
+                        }   
                     }
-
-                }
-
-                &.main_section_04 {
-                    background: #deeff8;
-                    padding: 0 5%;
-
-                    .content_wrap {
-                        padding: 75px 0;
-
-                        .swiper-container.main_product_slide_02 {
-
-                            .swiper-wrapper {
-                                .swiper-slide {
-                                    justify-content: space-between;
-
-                                    .text_wrap {
-                                        width: 50%;
-
-                                        .text_01 {}
-
-                                        .text_02 {
-                                            margin-top: 20px;
-                                        }
-                                    }
-
-                                    img {
-                                        width: 50%;
-                                        margin-left: 0;
-                                    }
+    
+                    &.main_section_03 {
+                        // margin-top: 80px;
+                        .content_wrap {
+                            .text_wrap {
+                                &.wrap_01 {
                                 }
                             }
-
-
-                            .swiper_navi {
-                                .swiper_navi_wrap {
-
-                                    .swiper-button-prev,
-                                    .swiper-button-next {
-                                        width: 30px;
-                                        height: 30px;
-                                    }
-
-                                    .swiper-button-prev {}
-
-                                    .swiper-button-next {}
-
-                                    .product_pagination_02 {
-                                        .swiper-pagination-current {}
-
-                                        .swiper-pagination-total {}
-                                    }
-                                }
-
-                            }
-
-                        }
-                    }
-                }
-
-
-                &.main_section_05 {
-                    margin-top: 75px;
-                    padding: 0 5%;
-
-                    .content_wrap {
-
-                        // display: flex;
-                        // flex-direction: column;
-                        .swiper-container {
-                            overflow: hidden;
-                            // order: 2;
-                            margin-top: 70px;
-
-                            .swiper-wrapper {
-                                .swiper-slide {
-                                    img {
-                                        // max-width: 550px;
-                                        max-height: 500px;
-                                        // width: 100%;
-                                        margin-left: 30px;
+                            .logo_wrap {
+                                &.wrap_01 {
+                                    a {
                                         width: 50%;
                                     }
-
-                                    figcaption {
-                                        width: 50%;
-                                        text-align: right;
-
-                                        span {}
-
-                                        .text_01 {}
-
-                                        .text_02 {
-                                            margin-top: 20px;
-                                            font-size: 14px;
-
-                                            .main_event_date {}
-                                        }
-
-                                        .text_04.view_more {
-                                            margin-top: 30px;
-
-                                            &::after {
-                                                left: auto;
-                                                right: 0;
-                                            }
-                                        }
-                                    }
-
-                                    &.swiper-slide-active {}
-                                }
-                            }
-                        }
-
-                        .swiper_navi {
-                            text-align: center;
-                            // position: relative;
-                            // order: 1;
-                            // text-align: center;
-                            transform: translateX(0);
-                            position: static;
-
-                            .swiper_navi_wrap {
-                                .text_wrap {
-                                    >p {
-                                        .text_01 {
-                                            strong {}
-                                        }
-
-                                        .text_02 {
-                                            strong {}
-                                        }
-                                    }
-                                }
-
-                                .swiper-button-next,
-                                .swiper-button-prev {
-                                    display: none !important;
-                                    width: 15px;
-                                    height: 20px;
-
-                                    &:hover {}
-                                }
-
-                                .swiper-button-prev {}
-
-                                .swiper-button-next {}
-                            }
-                        }
-                    }
-                }
-
-
-                &.main_section_06 {
-                    margin-top: 75px;
-
-                    .content_wrap {
-                        >.contact_wrap {
-                            flex-direction: column;
-
-                            >div {}
-
-                            .contact_img {
-                                width: 100%;
-                                height: 200px;
-
-                                img {}
-                            }
-
-                            .contact_box {
-                                width: 100%;
-                                padding: 50px 40px;
-
-                                .box_wrap {
-                                    max-width: 100%;
-
-                                    .text_wrap {
-                                        margin-left: 0;
-                                        text-align: center;
-
-                                        .text_01 {
-                                            strong {}
-                                        }
-
-                                        .text_02 {
-                                            margin-top: 20px;
-                                        }
-                                    }
-
-                                    .form_box {
-                                        margin-top: 35px;
-
-                                        .content {
-                                            label {}
-
-                                            input,
-                                            .inq_box {}
-                                        }
-
-                                        .content.full {}
-
-                                        .box_01 {
-                                            .content:nth-child(even) {}
-                                        }
-
-                                        .box_02 {
-                                            margin-top: 10px;
-
-                                            .inq_box {
-                                                height: 100px;
-                                            }
-                                        }
-
-                                        .box_submit {
-                                            margin-top: 10px;
-                                            text-align: right;
-
-                                            .btn_submit {
-                                                padding: 20px 35px;
-
-                                                &:hover {}
-                                            }
-                                        }
-                                    }
                                 }
                             }
                         }
                     }
-                }
-
-
-            }
-        }
-
-        // ==========================main_index==========================
-
-
-        // ==========================sub_page==========================
-        // sub_page default (main visual / sub menu bar)
-        &.sub {
-            &.about .visual {}
-
-            &.product .visual {}
-
-            &.shop .visual {}
-
-            &.community .visual {}
-
-            &.contact .visual {}
-
-            .sub_section.visual {
-                height: 300px;
-                .visual_img {
-                    .visual_title {}
-                }
-
-                .sub_depth {
-                    a {}
-
-                    .sub_ico {
-                        img {}
-
-                        &::after {}
-
-                        &:hover {
-                            img {}
-                        }
-                    }
-
-                    .sub_nav {
-                        .depth_01 {
-                            .depth_01_list {
-                                >a {}
-
-                                >i {
-                                    img {}
-                                }
-                            }
-
-                            &::after {}
-                        }
-
-
-                        .depth_02 {
-                            .depth_02_list {
-                                a {
-
-                                    // padding: 20px 0 0 30px;
-                                    &:hover {}
-                                }
-
-                                &:last-child {}
-                            }
-                        }
-
-                        // sub_nav hover,active
-                        &:hover {
-                            .depth_01 {
-                                i {
-                                    img {}
-                                }
-                            }
-
-                            .depth_02 {}
-                        }
-                    }
-
-                    .sub_nav_02 {}
-                }
-            }
-
-            .sub_page_layout {
-                &.sub_section_01 {
-                    .sub_page_title {
-                        >span {}
-
-                        .text_01 {
-                            img {}
-                        }
-
-                        .sub_title {
-                            margin-top: 15px;
-                            font-size: 15px;
-                        }
-                    }
-
-                    >article.content:last-child {}
-                }
-            }
-
-
-
-        }
-        // sub_page default (main visual / sub menu bar)
-
-      
-
-
-        // about_ceo ============================================
-        &.about.ceo {
-            .sub_section_01 {
-
-                .content_01 {
-                    >figure {
-                        img {
-                            opacity: .4;
-                        }
-
-                        figcaption {
-                            span {}
-
-                            .text_01 {}
-
-                            .text_02 {}
-
-                            .text_03 {}
-                        }
-                    }
-                }
-
-                .content_02 {
-                    .text_wrap {
-                        .text_01 {}
-                    }
+    
                 }
             }
         }
+        // ====================================== main ======================================
 
-        // about_history ============================================
-        &.about.history {
-            .sub_section_01 {
-                .history_line {
-                    .history_wrap {
+            
+        // ====================================== footer ======================================
+        #footer {
+            .footer_wrap {
+                flex-direction: row;
+                .footer_left {
+                    width: 50%;
+                    > ul {
+                        > li {
+                            margin-top: 5px;
+                        }
+                    }
+                }
 
-                        // margin-top: 50px;
-                        .after_bar,
-                        .before_bar {}
-
-                        .after_bar {}
-
-                        .before_bar {}
-
-
-
-                        .history_ul {
-
-                            &.first::after {}
-
-                            &:last-child::before {}
-
-                            &:first-child {}
-
-                            >li {
-
-                                &.history_year {
-
-                                    >p {}
-                                }
-
-                                &.history_text_wrap {
-
-                                    .history_list {
-
-                                        .text_01 {}
-
-                                        .text_02 {}
-                                    }
-                                }
+                .footer_center {
+                    display: none;
+                    > ul {
+                        > li {
+                            strong {
                             }
+                            span {
+                            }
+                        }
+                    }
+                }
+
+                .footer_right {
+                    width: 50%;
+                    margin-top: 0;
+                    > ul {
+                        li {
+                            margin-top: 10px;
                         }
                     }
                 }
             }
         }
-
-
-        // about_certifi ============================================
-        &.about.certifi {
-            .sub_section_01 {
-                .content_01 {
-                    .content_wrap {
-                        
-                        .certifi_list {
-                            width: calc(50% - 10px);
-                            margin-right: 10px;
-                            &:nth-child(even) {
-                                margin-right: 0;
-                            }
-                            img {}
-
-                            figcaption {
-                                font-size: 16px;
-
-                                .text_01 {
-                                    font-size: 14px;
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .content_02 {
-                    .btn_wrap {
-                        font-size: 14px;
-
-                        .btn_ico {
-                            &:first-child {
-                                margin-right: 30px;
-                            }
-
-                            &:last-child {
-                                margin-left: 30px;
-                            }
-                        }
-
-                        .btn_num {}
-
-
-
-                        .btn_num {
-
-                            &.active,
-                            &:hover {}
-                        }
-                    }
-                }
-            }
-        }
-
-
-        // about_direction ============================================
-        &.about.direction {
-            .sub_section_01 {
-                .content_01 {
-                    .content_wrap {
-                        .content_list {
-                            &:last-child {}
-
-                            >a {
-                                >div {
-                                    img {}
-                                }
-
-                                figcaption {
-                                    span {}
-
-                                    .text_01 {}
-
-                                    .text_02 {}
-
-                                    .text_02,
-                                    .text_03 {}
-                                }
-
-                                // hover, active
-                                &:hover {
-                                    span {}
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .content_02 {}
-            }
-        }
-
-        // shop ============================================
-        &.shop {
-            .sub_section_01 {
-                .content_01 {
-                    .content_wrap {
-                        .content_list {
-                            width: 50%;
-                            text-align: center;
-                            >a {
-                                &:hover {
-                                    .text_01 {}
-                                }
-
-                                >div {
-                                    img {
-                                        max-width: 100px;
-                                    }
-                                }
-
-                                figcaption {
-                                    .text_01 {}
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        // product ============================================
-        &.product {
-            .sub_section_01 {
-                .content_01 {
-                    .content_wrap {
-                        .product_navi {
-                            >ul {
-                                li {
-                                    width: auto;
-
-                                    &:not(:last-child) {}
-
-                                    a {}
-
-                                    // active,hover
-                                    &.active {
-                                        a {}
-                                    }
-                                }
-                            }
-                        }
-
-                        .product_wrap {
-                            .product_list {
-                                .product_item {
-                                    width: calc(50% - 10px);
-                                    margin-right: 10px;
-                                    &:nth-child(2n) {
-                                        margin-right: 0;
-                                    }
-                                    >a {
-                                        figure {
-                                            img {}
-
-                                            figcaption {
-                                                span {}
-
-                                                .text_01 {}
-
-                                                .text_02 {}
-                                            }
-                                        }
-                                    }
-                                }
-
-                                &.active {}
-                            }
-
-                            // active, hover 
-
-                        }
-                    }
-                }
-
-                .content_02 {}
-            }
-        }
-
-        // product_more ============================================
-        &.product_more {
-            .sub_section_01 {
-                .content_01 {
-                    .content_wrap {}
-                }
-
-                .content_02 {
-                    margin-top: 50px;
-
-                    .product_more {
-                        .product_wrap {
-                            flex-wrap: wrap;
-                            flex-direction: column;
-                            justify-content: center;
-
-                            .product_img {
-                                width: 100%;
-
-                                .product_thum {
-                                    img {}
-                                }
-
-                                .product_thum_sub {
-                                    margin-top: 10px;
-                                    overflow: scroll;
-                                    overflow-y: hidden;
-                                    justify-content: flex-start;
-
-                                    img {
-                                        &:hover {}
-                                    }
-                                }
-                            }
-
-                            .product_info {
-                                margin-top: 20px;
-                                width: 100%;
-
-                                >span {}
-
-                                .text_01 {}
-
-                                .text_02 {
-                                    margin-top: 20px;
-                                    font-size: 14px;
-                                }
-
-                                .btn {
-                                    display: block;
-                                    margin-top: 15px;
-                                    text-align: center;
-
-                                    &:hover {}
-                                }
-                            }
-                        }
-
-                    }
-                }
-
-                .content_03 {
-                    background: none;
-                    .content_wrap {
-                        .product_table_wrap {
-                            padding: 0;
-                            .product_table_title {}
-
-                            .product_table {
-                                tbody {
-                                    >tr {
-                                        th {}
-
-                                        td {}
-                                    }
-
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
-
-        // contact.page_01 ============================================
-        &.contact.page_01 {
-            .sub_section_01 {
-                .content_01 {
-                    .content_wrap {
-                        .box_wrap {
-                            label {}
-
-                            input,
-                            textarea {}
-
-                            input::placeholder {}
-                        }
-
-                        .contact_01 {
-                            flex-wrap: wrap;
-                            .box_wrap {
-                                margin-top: 10px;
-                                input {
-                                    max-width: 100%;
-                                    margin-right: 0;
-                                }
-                            }
-                        }
-
-                        .contact_02 {
-                            textarea {}
-                        }
-
-                        .contact_03 {
-                            .box_wrap {
-                                input {
-                                    &:hover {}
-                                }
-                            }
-
-                        }
-
-                    }
-                }
-            }
-
-            .sub_section_02 {
-                .content {}
-
-                .content_01 {
-                    .content_wrap {
-                        .content_list {
-                            &:last-child {}
-
-                            >a {
-
-                                >div {
-
-                                    img {}
-                                }
-
-                                figcaption {
-
-                                    span {}
-
-                                    .text_01 {}
-
-                                    .text_02 {}
-
-                                    .text_02,
-                                    .text_03 {}
-                                }
-
-                                // hover, active
-                                &:hover {
-                                    span {}
-                                }
-                            }
-                        }
-                    }
-                }
-
-                .content_02 {}
-            }
-        }
-
-   
-        // community.sns ============================================
-        &.community.sns {
-            .sub_section_01 {
-                .content_01 {
-                    .content_wrap {
-                        .sns_wrap {
-                            &.sns_01 {}
-
-                            &.sns_02 {}
-
-                        }
-                    }
-                }
-            }
-
-            .sub_section_02 {
-                .content_01 {
-                }
-            }
-
-            .sns_info {
-                img {
-                    max-width: 60px;
-                    max-height: 60px;
-                }
-
-                figcaption {
-                    margin-left: 20px;
-                    >span {
-                    }
-
-                    .text_01 {
-                    }
-
-                    .text_02 {
-                    }
-                }
-            }
-
-            .sns_detail {
-                >a {
-                }
-
-                figure {
-                    max-width: 150px;
-                    max-height: 150px;
-                    width: 100%;
-                    margin-bottom: 10px;
-
-                    img {
-                        width: 100%;
-                        height: 100%;
-                    }
-                }
-            }
-        }
-
-        // ==========================sub_page==========================
-
-
-
-
+        // ====================================== footer ======================================
     }
 
-    // ==========================main==========================
 
-
-    // ==========================footer==========================
-    #footer {
-        .footer_wrap {
-            flex-direction: column;
-
-            .content_01 {
-                order: 2;
-
-                .link_wrap {
-                    .footer_link {
-                        &:not(:first-child) {}
-
-                        a {}
-                    }
-                }
-
-                .info_wrap {
-                    .footer_info {
-                        >a {
-                            &:hover {}
-                        }
-
-                        &.direction {}
-
-                        &.copyright {}
-                    }
-                }
-            }
-
-            .content_02 {
-                order: 1;
-                margin-bottom: 20px;
-            }
-        }
-    }
 }
 
 
@@ -3132,366 +1794,4 @@
     }
 
 
-
-    main {
-
-        // ==========================main_index==========================
-        &.main_wrap {
-            .main_section {
-                &:not(:first-child) {}
-
-                &.main_section_01 {
-                    .main_visual_scroll {
-                        .bar_warp {
-                            span {}
-
-                            .bar_background,
-                            .bar_move {}
-
-                            .bar_background {}
-
-                            .bar_move {
-                                .bar_dot {}
-                            }
-                        }
-
-                        .bar_img {}
-                    }
-
-
-                    .mv_wrap {
-
-                        .mv {
-                            &.mv_01 {}
-
-                            &.mv_02 {}
-
-                            &.mv_03 {}
-
-                            .mv_img {}
-
-                            .mv_text {
-                                span {}
-
-                                .text_01 {
-                                    i {}
-
-                                    strong {}
-                                }
-
-                                .text_02 {}
-
-                                .view_more {}
-                            }
-                        }
-                    }
-                }
-
-                &.main_section_02,
-                &.main_section_03 {
-                    .content_wrap {
-                        .content_title {
-                            .text_01 {
-                                strong {}
-                            }
-
-                            .text_02 {}
-
-                            .text_03 {
-                                strong {}
-                            }
-                        }
-                    }
-
-                    .content_detail.main_about {
-                        figure {
-                            img {}
-
-                            figcaption {}
-
-                            &:nth-child(odd) {}
-
-                            &:hover {
-                                img {}
-                            }
-                        }
-
-                    }
-                }
-
-                &.main_section_03 {
-                    .content_wrap {
-                        .main_product {
-                            .main_product_wrap {
-
-                                // swiper-button
-                                .swiper-button-next,
-                                .swiper-button-prev {}
-
-                                .swiper-button-next {}
-
-                                .swiper-button-prev {}
-
-                                .swiper_wrap {
-                                    .main_product_slide_01 {
-                                        .swiper-wrapper {
-                                            .product_01 {
-                                                &:hover {
-                                                    i {
-                                                        img {}
-                                                    }
-                                                }
-
-                                                img {}
-
-                                                .product_text_wrap {
-                                                    >p {
-                                                        .text_01 {}
-
-                                                        .text_02 {}
-                                                    }
-
-                                                    i {
-                                                        img {}
-                                                    }
-                                                }
-                                            }
-                                        }
-                                    }
-                                }
-
-
-                                .more_text_wrap {
-
-                                    .view_more {}
-                                }
-                            }
-                        }
-                    }
-
-                }
-
-                &.main_section_04 {
-                    .content_wrap {
-                        .swiper-container.main_product_slide_02 {
-                            .swiper-wrapper {
-                                .swiper-slide {
-                                    .text_wrap {
-                                        .text_01 {}
-
-                                        .text_02 {}
-                                    }
-
-                                    img {}
-                                }
-                            }
-
-
-                            .swiper_navi {
-                                display: none;
-
-                                .swiper_navi_wrap {
-
-                                    .swiper-button-prev,
-                                    .swiper-button-next {}
-
-                                    .swiper-button-prev {}
-
-                                    .swiper-button-next {}
-
-                                    .product_pagination_02 {
-                                        .swiper-pagination-current {}
-
-                                        .swiper-pagination-total {}
-                                    }
-                                }
-
-                            }
-
-                        }
-                    }
-                }
-
-
-                &.main_section_05 {
-                    .content_wrap {
-                        .swiper-container {
-                            .swiper-wrapper {
-                                .swiper-slide {
-                                    display: flex;
-                                    flex-direction: column;
-
-                                    img {
-                                        max-height: 300px;
-                                        margin-left: 0;
-                                        width: 100%;
-                                    }
-
-                                    figcaption {
-                                        margin-top: 10px;
-                                        order: 2;
-                                        width: 100%;
-
-                                        span {}
-
-                                        .text_01 {}
-
-                                        .text_02 {
-                                            .main_event_date {}
-                                        }
-
-                                        .text_04.view_more {
-                                            &::after {}
-                                        }
-                                    }
-
-                                    &.swiper-slide-active {}
-                                }
-                            }
-                        }
-
-                        .swiper_navi {
-                            .swiper_navi_wrap {
-                                .text_wrap {
-                                    >p {
-                                        .text_01 {
-                                            strong {}
-                                        }
-
-                                        .text_02 {
-                                            strong {}
-                                        }
-                                    }
-                                }
-
-                                .swiper-button-next,
-                                .swiper-button-prev {
-                                    &:hover {}
-                                }
-
-                                .swiper-button-prev {}
-
-                                .swiper-button-next {}
-                            }
-                        }
-                    }
-                }
-
-
-                &.main_section_06 {
-                    .content_wrap {
-                        >.contact_wrap {
-                            >div {}
-
-                            .contact_img {
-                                height: 120px;
-
-                                img {}
-                            }
-
-                            .contact_box {
-                                .box_wrap {
-                                    .text_wrap {
-                                        .text_01 {
-                                            strong {}
-                                        }
-
-                                        .text_02 {}
-                                    }
-
-                                    .form_box {
-                                        .content {
-                                            label {}
-
-                                            input,
-                                            .inq_box {}
-                                        }
-
-                                        .content.full {}
-
-                                        .box_01 {
-                                            .content:nth-child(even) {}
-                                        }
-
-                                        .box_02 {
-                                            .inq_box {}
-                                        }
-
-                                        .box_submit {
-                                            .btn_submit {
-                                                &:hover {}
-                                            }
-                                        }
-                                    }
-                                }
-                            }
-                        }
-                    }
-                }
-
-
-            }
-
-         
-            
-        }
-
-        &.sub {
-            .sub_section.visual {
-                height: 250px;
-            }
-        }
-       
-
-        // ==========================main_index==========================
-
-        // ==========================sub_page==========================
-
-
-        // ==========================sub_page==========================
-
-
-    }
-
-
-    // ==========================footer==========================
-    #footer {
-        .footer_wrap {
-            flex-direction: column;
-
-            .content_01 {
-                order: 2;
-
-                .link_wrap {
-                    .footer_link {
-                        margin-right: 10px;
-                        &:not(:first-child) {
-                            margin-left: 0;
-                        }
-
-                        a {
-                        }
-                    }
-                }
-
-                .info_wrap {
-                    .footer_info {
-                        >a {
-                            display: inline-block;
-                            &:hover {}
-                        }
-
-                        &.direction {}
-
-                        &.copyright {}
-                    }
-                }
-            }
-
-            .content_02 {
-                order: 1;
-                margin-bottom: 20px;
-            }
-        }
-    }
 }

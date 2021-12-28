@@ -522,10 +522,6 @@ body header .header_wrap .header_center > .depth_01 > a {
   letter-spacing: -0.4px;
 }
 
-body header .header_wrap .header_full {
-  display: none;
-}
-
 body header .header_wrap:hover .header_center .depth_01 {
   opacity: 1;
   visibility: visible;

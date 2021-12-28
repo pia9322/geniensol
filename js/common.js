@@ -5,7 +5,7 @@ $(document).ready(function(){
 
 
     AOS.init({
-        duration: 1000,
+        duration: 1500,
         // disable: function () {
         //     var maxWidth = 767;
         //     return window.innerWidth < maxWidth;
@@ -54,7 +54,7 @@ $(document).ready(function(){
         slidesPerView: 2.75,
         // centeredSlides: true,
         // autoplay: {
-        //     delay: 3000,
+        //     delay: 2000,
         //     disableOnInteraction: false,
         // },
         spaceBetween : 20, 
@@ -67,6 +67,9 @@ $(document).ready(function(){
         breakpoints : {
             "1100" :{
                 slidesPerView: 2,
+            },
+            "767" :{
+                slidesPerView: 1,
             },
         }
 

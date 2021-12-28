@@ -801,6 +801,9 @@
     font-size: 14px;
     margin-top: 10px;
   }
+  body main.main_wrap .main_section.main_section_01 {
+    background: none;
+  }
   body main.main_wrap .main_section.main_section_01 .content_wrap.wrap_01 {
     padding-top: 80px;
     -webkit-box-orient: vertical;

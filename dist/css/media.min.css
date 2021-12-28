@@ -170,6 +170,7 @@
   .table_wrap .table_news .news_wrap > a:nth-child(2n) { margin-right: 0; }
   .table_wrap .table_news .news_wrap > a .news_item figcaption { padding: 10px; }
   .table_wrap .table_news .news_wrap > a .news_item figcaption .text_02 { font-size: 14px; margin-top: 10px; }
+  body main.main_wrap .main_section.main_section_01 { background: none; }
   body main.main_wrap .main_section.main_section_01 .content_wrap.wrap_01 { padding-top: 80px; -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; -ms-flex-wrap: wrap; flex-wrap: wrap; }
   body main.main_wrap .main_section.main_section_01 .content_wrap.wrap_01 .text_wrap .text_link { -webkit-box-pack: start; -ms-flex-pack: start; justify-content: flex-start; }
   body main.main_wrap .main_section.main_section_01 .content_wrap.wrap_01 .detail_wrap { width: 100%; margin-left: 0; margin-top: 40px; }

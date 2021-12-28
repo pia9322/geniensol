@@ -208,6 +208,7 @@
   body main.sub_page.culture .sub_section.sub_section_02 { margin-top: 60px; }
   body main.sub_page.culture .sub_section.sub_section_02 .content_wrap.wrap_01 .text_wrap > span.text_02 { margin-top: 10px; }
   body main.sub_page.culture .sub_section.sub_section_02 .content_wrap.wrap_02 { margin-top: 30px; }
+  body main.sub_page.recruit .sub_section.sub_section_01 { background: url("../images/recruit/mv.png") no-repeat 33%/cover; }
   body main.sub_page.recruit .sub_section.sub_section_02 .content_wrap.wrap_01 > figure { -webkit-box-orient: vertical; -webkit-box-direction: normal; -ms-flex-direction: column; flex-direction: column; }
   body main.sub_page.recruit .sub_section.sub_section_02 .content_wrap.wrap_01 > figure img { width: 100%; }
   body main.sub_page.recruit .sub_section.sub_section_02 .content_wrap.wrap_01 > figure > figcaption { width: 100%; }

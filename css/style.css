@@ -440,16 +440,9 @@ body .table_wrap_more .table_notice_more > a:hover {
 }
 
 body #cursor {
-  display: none;
-  position: fixed;
-  z-index: 100;
-  top: 0;
-  left: 0;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
-  border: 1px solid #fff;
-  border-radius: 100%;
-  font-size: 18px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
   pointer-events: none;
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -457,6 +450,37 @@ body #cursor {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  font-size: 18px;
+  z-index: 9999;
+}
+
+body #cursor::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  -webkit-transition: .6s;
+  transition: .6s;
+  border: 1px solid #fff;
+  border-radius: 100%;
+  width: 1px;
+  height: 1px;
+  opacity: 0;
+  visibility: hidden;
+}
+
+body #cursor.active::after {
+  width: 100px;
+  height: 100px;
+  opacity: 1;
+  visibility: visible;
 }
 
 body header {

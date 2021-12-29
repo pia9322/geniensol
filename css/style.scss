@@ -458,13 +458,28 @@ body {
 
     // mouse effect
     #cursor{
-        display: none;
-        position: fixed; z-index: 100;
-        top: 0; left: 0;
-        transform: translate(-50%, -50%);
-        border: 1px solid #fff; border-radius: 100%; 
+        display: flex; pointer-events: none; align-items: center; justify-content: center;
+        position: fixed;  top: 0; left: 0; transform: translate(-50%, -50%);
         font-size: 18px;
-        pointer-events: none; align-items: center; justify-content: center;
+        z-index: 9999;
+        
+
+        &::after {
+            content: '';
+            position: absolute; left: 50%; top: 50%;
+            transform: translate(-50%,-50%);
+            transition: .6s;
+            border: 1px solid #fff; border-radius: 100%; 
+            width: 1px; height: 1px;
+            opacity: 0; visibility: hidden;
+        }
+
+        &.active {
+            &::after {
+                width: 100px; height: 100px;
+                opacity: 1; visibility: visible;
+            }
+        }
     }
     // mouse effect
 

@@ -703,19 +703,22 @@
     <script src="../js/common.js"></script>
 
     <script>
-        $(function() {
+         $(function() {
             function MainCursor() {
                 let cursor = document.querySelector("#cursor");
                 let mainslide = document.querySelector(".main_silde_01 .swiper-wrapper");
 
                 function hovered() {
-                    cursor.style.display = 'flex';
-                    cursor.style.width = '100px';
-                    cursor.style.height = '100px';
+                    // cursor.style.display = 'flex';
+                    // cursor.style.width = '100px';
+                    // cursor.style.height = '100px';
+                    cursor.style.opacity = '1';
+                    cursor.classList.add('active');
                 }
 
                 function hoveredOut() {
-                    cursor.style.display = 'none';
+                    cursor.style.opacity = '0';
+                    cursor.classList.remove('active');
                 }
 
                 mainslide.addEventListener("mouseover", hovered, false);
@@ -728,10 +731,9 @@
                     cursor.style.top = mouseY + 'px';
                 });
             }
-            
+
             let winWid = window.innerWidth;
             767 <= winWid ? MainCursor() : null;
-
 
         });
     </script>
